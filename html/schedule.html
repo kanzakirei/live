@@ -1,0 +1,26 @@
+<!--include library/base.html-->
+<!--include library/loading.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>REIKITU SCHEDULE</title>
+  <link type="text/css" rel="stylesheet" href="../css/member.css">
+  <link type="text/css" rel="stylesheet" href="../css/articleList.css">
+  <link type="text/css" rel="stylesheet" href="../css/base.css">
+  <script src="../js/createScheduleList.js"></script>
+  <script>getJsonFromAPI("https://script.google.com/macros/s/AKfycbzar6tSf0Q0kpPnJ5pbCcZNPzYTMs3Zp8CItCKd2F5zx5xz0-tHa1gM69kHLnRtMIO4wA/exec", createScheduleList);</script>
+</head>
+
+<body>
+  <main>
+    <div class="content">
+      <h2>スケジュール</h2>
+      <div id="memberList"></div>
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>

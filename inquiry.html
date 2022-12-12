@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="img/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="img/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="white">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="white">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="white">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <script src="js/base.js"></script>
+  <title>REIKITU INFO</title>
+  <link type="text/css" rel="stylesheet" href="css/label.css">
+  <link type="text/css" rel="stylesheet" href="css/base.css">
+  <script src="js/checkInquiry.js"></script>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="img/logo.svg" alt="logo"></a>
+    <div class="navigationButton" onclick="onClickedNavigationButton(this)"><span></span><span></span><span></span>
+    </div>
+    <div id="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="member.html">Member</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="inquiry.html">Inquiry</a></li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <div class="background"><span></span><span></span><span></span><span></span></div>
+    <div class="content">
+      <h2>お問い合わせ</h2>
+      <div id="formWrapper">
+        <form
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfSBHWoqOW9FqLXs6chNLuznWSbvjsPOJIO8MHVEXNSwtPvig/formResponse"
+          method="post" name="myForm" target="dummyIframe">
+          <p class="center">こちらでお問い合わせ内容を送ることができます。<br>以下の項目を入力して送信ボタンを押してください。</p>
+          <div>
+            <label>お名前<span class="label label_red">必須</span><br></label>
+            <input name="entry.189874138" id="characterNameForm" placeholder="お名前をご入力ください。" required="required"
+              style="width:50%;" type="text">
+          </div>
+          <div>
+            <label>お問い合わせ内容<span class="label label_red">必須</span><br></label>
+            <textarea name="entry.875781179" id="inquiryForm" placeholder="お問い合わせ内容をご入力ください。" required="required"
+              style="height:64px; width:50%;"></textarea>
+          </div>
+          <input value="送信" onclick="checkSubmit()" type="submit">
+        </form>
+        <iframe name="dummyIframe" style="display:none;"></iframe>
+      </div>
+      <div id="thxMessage" style="display:none;">
+        <p>お問い合わせありがとうございました。<br>管理者が確認するまでお待ちください。</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="content">
+      <a href="inquiry.html">お問い合わせ</a>
+      <p class="center">© 2022 reikitu</p>
+    </div>
+  </footer>
+</body>
+</html>
