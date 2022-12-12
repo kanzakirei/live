@@ -27,7 +27,7 @@ header a img {
 
 main {
   padding-top: 50px;
-  background-color: #fefecf;
+  background-color: #cce4ff;
 }
 
 footer {
@@ -73,27 +73,27 @@ p.left {
 }
 
 .background span:nth-of-type(1) {
-  background-color: #cce4ff;
+  background-color: gray;
   transform: rotate(-33deg) translateX(60vw);
   animation: bgLine1Anime 5s linear 0s infinite normal forwards;
 }
 
 .background span:nth-of-type(3) {
-  background-color: #cce4ff;
+  background-color: gray;
   top: 25%;
   transform: rotate(16deg) translateX(110vw);
   animation: bgLine3Anime 4s linear 4s infinite normal forwards;
 }
 
 .background span:nth-of-type(2) {
-  background-color: #ffd9fe;
+  background-color: gray;
   top: 100%;
   transform: rotate(-33deg) translateX(-60vw);
   animation: bgLine2Anime 5s linear 2s infinite normal forwards;
 }
 
 .background span:nth-of-type(4) {
-  background-color: #ffd9fe;
+  background-color: gray;
   top: 75%;
   transform: rotate(16deg) translateX(-110vw);
   animation: bgLine4Anime 4s linear 6s infinite normal forwards;
@@ -103,8 +103,8 @@ p.left {
   overflow: hidden;
   position: relative;
   border: 5px solid;
-  border-image: linear-gradient(170deg, #cce4ff 0%, #cce4ff 50%, #ffd9fe 50%, #ffd9fe 100%);
-  border-image-slice: 1;
+  border-color: gray;
+  border-radius: 8px;
   aspect-ratio: 16/9;
   text-align: left;
 }
@@ -138,8 +138,8 @@ p.left {
   text-decoration: none;
   font-weight: bold;
   border: 5px solid;
-  border-image: linear-gradient(170deg, #cce4ff 0%, #cce4ff 50%, #ffd9fe 50%, #ffd9fe 100%);
-  border-image-slice: 1;
+  border-color: gray;
+  border-radius: 8px;
 }
 
 .linkButton:hover {
@@ -154,8 +154,8 @@ p.left {
   transition: right .3s;
   width: 6px;
   height: 6px;
-  border-top: solid 5px #cce4ff;
-  border-right: solid 5px #ffd9fe;
+  border-top: solid 5px gray;
+  border-right: solid 5px gray;
   transform: translateY(-50%) rotate(45deg);
 }
 
@@ -174,7 +174,7 @@ p.left {
   margin-top: -50px;
   padding-bottom: 54px;
   box-shadow: 0px -4px 4px 0px rgba(29, 29, 29, .1);
-  background-color: #fefecf;
+  background-color: gray;
   align-items: center;
 }
 
@@ -202,11 +202,11 @@ p.left {
 }
 
 .parallax:nth-of-type(1) {
-  background-color: #cce4ff;
+  background-color: gray;
 }
 
 .parallax:nth-of-type(2) {
-  background-color: #ffd9fe;
+  background-color: gray;
 }
 
 @media screen and (min-width: 700px) {
@@ -233,7 +233,7 @@ p.left {
     font-size: 20px;
     font-weight: bold;
     letter-spacing: normal;
-    color: #292929;
+    color: gray;
   }
 
   .navigationButton,
@@ -301,7 +301,7 @@ p.left {
   .navigationButton span:nth-of-type(1) {
     top: 15px;
     z-index: 31;
-    background-color: #cce4ff;
+    background-color: gray;
   }
 
   .navigationButton span:nth-of-type(2) {
@@ -311,7 +311,7 @@ p.left {
 
   .navigationButton span:nth-of-type(3) {
     top: 31px;
-    background-color: #ffd9fe;
+    background-color: gray;
   }
 
   .navigationButton.active span:nth-of-type(1) {
