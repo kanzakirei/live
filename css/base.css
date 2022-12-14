@@ -8,13 +8,8 @@ html {
   color: #292929;
 }
 
-@font-face {
-  font-family: 'MyFont';
-  src: url("font/MOBO.otf");
-}
-
 body {
-  font-family: MyFont;
+  font-family: MOBOFont;
 }
 
 header {
@@ -368,6 +363,11 @@ p.left {
     transform: translateY(-6px) rotate(-45deg);
     width: 40%;
   }
+}
+
+@font-face {
+  font-family: 'MOBOFont';
+  src: url("../font/MOBO.otf");
 }
 
 @keyframes fadeInAnime {
