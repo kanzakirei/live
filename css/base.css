@@ -246,7 +246,7 @@ p.left {
   background-color: gray;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 955px) {
   #navigation {
     position: fixed;
     right: 0;
@@ -285,7 +285,7 @@ p.left {
   }
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 954px) {
   #navigation {
     position: fixed;
     right: 0;
@@ -301,8 +301,8 @@ p.left {
   #navigation li {
     display: inline-block;
     letter-spacing: -.001px;
-    width: 40%;
-    margin: 15px 0;
+    width: 30%;
+    margin-top: 60px;
   }
 
   #navigation li a,
