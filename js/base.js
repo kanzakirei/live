@@ -89,8 +89,11 @@ particlesJS("snowParticles", {
 
 function onClickedCampaignButton() {
   let answerText = document.getElementById('answerText');
-  if(answerText.value == "テスト") {
-    location = '../index.html';
+  let comment = document.getElementById('comment');
+  if (answerText.value == "テスト") {
+    location = 'WajkdDjkjIjkLJdHknKslj.html';
+  } else {
+    comment.innerText = "キーワードが間違っているよ！もう一度確認してみてね！";
   }
 }
 
