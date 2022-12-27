@@ -86,3 +86,12 @@ particlesJS("snowParticles", {
   },
   "retina_detect": true
 });
+
+function onClickedCampaignButton() {
+  let answerText = document.getElementById('answerText');
+  if(answerText.value == "テスト") {
+    location = '../index.html';
+  }
+}
+
+document.getElementById('campaignButton').addEventListener('click', onClickedCampaignButton);
