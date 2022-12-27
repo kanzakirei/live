@@ -90,7 +90,7 @@ particlesJS("snowParticles", {
 function onClickedCampaignButton() {
   let answerText = document.getElementById('answerText');
   let comment = document.getElementById('comment');
-  if (answerText.value == "テスト") {
+  if (answerText.value == "4周年") {
     location = 'WajkdDjkjIjkLJdHknKslj.html';
   } else {
     comment.innerText = "キーワードが間違っているよ！もう一度確認してみてね！";
