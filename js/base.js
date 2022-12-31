@@ -97,4 +97,7 @@ function onClickedCampaignButton() {
   }
 }
 
-document.getElementById('campaignButton').addEventListener('click', onClickedCampaignButton);
+let campaignButton = document.getElementById('campaignButton');
+if (campaignButton) {
+  campaignButton.addEventListener('click', onClickedCampaignButton);
+}

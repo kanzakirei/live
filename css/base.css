@@ -109,41 +109,6 @@ p.left {
   padding: 0px 15px 30px;
 }
 
-.background span {
-  display: inline-block;
-  position: fixed;
-  transition: all .4s;
-  height: 4px;
-  width: 100vw;
-}
-
-.background span:nth-of-type(1) {
-  background-color: gray;
-  transform: rotate(-33deg) translateX(60vw);
-  animation: bgLine1Anime 5s linear 0s infinite normal forwards;
-}
-
-.background span:nth-of-type(3) {
-  background-color: gray;
-  top: 25%;
-  transform: rotate(16deg) translateX(110vw);
-  animation: bgLine3Anime 4s linear 4s infinite normal forwards;
-}
-
-.background span:nth-of-type(2) {
-  background-color: gray;
-  top: 100%;
-  transform: rotate(-33deg) translateX(-60vw);
-  animation: bgLine2Anime 5s linear 2s infinite normal forwards;
-}
-
-.background span:nth-of-type(4) {
-  background-color: gray;
-  top: 75%;
-  transform: rotate(16deg) translateX(-110vw);
-  animation: bgLine4Anime 4s linear 6s infinite normal forwards;
-}
-
 #slideshowImage {
   overflow: hidden;
   position: relative;
@@ -528,7 +493,6 @@ summary::-webkit-details-marker {
 }
 
 @keyframes slideshowImageAnime {
-
   0% {
     opacity: 1;
     z-index: 1;
@@ -552,50 +516,20 @@ summary::-webkit-details-marker {
   }
 }
 
-@keyframes bgLine1Anime {
-
-  0%,
-  80% {
-    transform: rotate(-33deg) translateX(60vw);
-  }
-
-  100% {
-    transform: rotate(-33deg) translateX(-160vw);
-  }
+.flyAnimation {
+  animation: flyAnime 5s ease-in-out 0s infinite normal forwards;
 }
 
-@keyframes bgLine2Anime {
+@keyframes flyAnime {
+  0% {
+    transform: translateY(-10px)
+  }
 
-  0%,
-  80% {
-    transform: rotate(-33deg) translateX(-60vw);
+  50% {
+    transform: translateY(10px)
   }
 
   100% {
-    transform: rotate(-33deg) translateX(160vw);
-  }
-}
-
-@keyframes bgLine3Anime {
-
-  0%,
-  80% {
-    transform: rotate(16deg) translateX(110vw);
-  }
-
-  100% {
-    transform: rotate(16deg) translateX(-110vw);
-  }
-}
-
-@keyframes bgLine4Anime {
-
-  0%,
-  80% {
-    transform: rotate(16deg) translateX(-110vw);
-  }
-
-  100% {
-    transform: rotate(16deg) translateX(110vw);
+    transform: translateY(-10px)
   }
 }
