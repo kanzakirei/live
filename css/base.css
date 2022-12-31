@@ -76,6 +76,19 @@ p.left {
   z-index: 1;
 }
 
+.profile {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.line {
+  width: 100%;
+  border-bottom: 2px solid #292929;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
 .fadeIn {
   animation: fadeInAnime .3s ease 0s 1 normal forwards;
 }
@@ -373,6 +386,19 @@ summary::-webkit-details-marker {
   .navigationButton.active span:nth-of-type(3) {
     visibility: hidden;
   }
+
+  .profilePanel {
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    vertical-align: middle;
+  }
+
+  .profilePanel img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 954px) {
@@ -457,6 +483,18 @@ summary::-webkit-details-marker {
     left: 16px;
     transform: translateY(-6px) rotate(-45deg);
     width: 40%;
+  }
+
+  .profile {
+    max-width: 600px;
+  }
+
+  .profilePanel {}
+
+  .profilePanel img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 }
 
