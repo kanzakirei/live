@@ -1,5 +1,5 @@
 @echo off
 pushd %~dp0
 cd ..\
-git checkout .
+git pull
 popd
