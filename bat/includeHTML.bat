@@ -1,3 +1,4 @@
+@echo off
 pushd "../html" > nul
 for %%f in (*.html) do call :MainFile %%f
 for %%f in (*.tmp) do del %%f
