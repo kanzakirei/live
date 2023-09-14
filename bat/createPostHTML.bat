@@ -6,9 +6,9 @@ popd > nul
 exit /b 0
 
 :MainFile
+type nul>main.tmp
 call :PostFile %1
 echo %~n1.html
-type nul>main.tmp
 type nul>%~n1.html
 for /f "delims=" %%t in (library/postBase.html) do (
     set dirFix=%%t
