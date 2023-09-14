@@ -1,5 +1,3 @@
-a
-
 @echo off
 pushd "../html" > nul
 for %%f in (posts/*.txt) do call :MainFile %%f
