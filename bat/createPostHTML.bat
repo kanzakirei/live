@@ -9,7 +9,7 @@ exit /b 0
 call :PostFile %1
 echo %~n1.html
 type nul>main.tmp
-type nul>../%1
+type nul>../%~n1.html
 for /f "delims=" %%t in (library/postBase.html) do (
     set dirFix=%%t
     setlocal enabledelayedexpansion
