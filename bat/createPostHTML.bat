@@ -26,6 +26,7 @@ exit /b 0
 echo %1
 for /f "delims=" %%t in (%1) do (
     echo ^<p^>%%t^<br^>^</p^>>>main.tmp
+    echo ^<p^>%%t^<br^>^</p^>
     echo|set /p="."
 )
 exit /b 0
