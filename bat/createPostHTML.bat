@@ -14,9 +14,9 @@ for /f "delims=" %%t in (library/postBase.html) do (
     set dirFix=%%t
     setlocal enabledelayedexpansion
     set dirFix=!dirFix:../=!
-    echo !dirFix!>>../%1
+    echo !dirFix!>>../%~n1
     echo "!dirFix!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>../%1
+    if not ERRORLEVEL 1 type main.tmp>>../%~n1
     endlocal
     echo|set /p="."
 )
