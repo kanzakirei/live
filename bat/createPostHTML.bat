@@ -1,33 +1,37 @@
 @echo off
 pushd "../html" > nul
-for %%f in (posts/*.txt) do call :MainFile Posts/%%f
+for %%f in (posts/*.txt) do call :MainFile posts/%%f
 for %%f in (*.tmp) do del %%f
 popd > nul
 exit /b 0
 
 :MainFile
-type nul>main.tmp
+
 call :PostFile %1
-echo %~n1.html
-type nul>%~n1.html
+
+set html=%~n1.html
+echo %html%
+type nul>%html%
 for /f "delims=" %%t in (library/postBase.html) do (
-    set dirFix=%%t
+    set row=%%t
     setlocal enabledelayedexpansion
-    echo !dirFix!>>%~n1.html
-    echo "!dirFix!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>%~n1.html
+    echo !row!>>%html%
+    echo !row!
+    echo "!row!" | find "<main>" > nul
+    if not ERRORLEVEL 1 type main.tmp>>%html%
     endlocal
-    echo|set /p="."
 )
 echo;
 exit /b 0
 
 :PostFile
 echo %1
-echo ^<div class="content"^>>>main.tmp
+type nul>main.tmp
 for /f "delims=" %%t in (%1) do (
-    echo ^<p^>%%t^<br^>^</p^>>>main.tmp
-    echo|set /p="."
+    set row=    ^<p^>%%t^<br^>^</p^>
+    setlocal enabledelayedexpansion
+    echo !row!
+    echo !row!>>main.tmp
+    endlocal
 )
-echo ^</div^>>>main.tmp
 exit /b 0
