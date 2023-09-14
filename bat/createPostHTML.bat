@@ -27,6 +27,7 @@ exit /b 0
 :PostFile
 echo %1
 type nul>main.tmp
+echo ^<br^>^<br^>>>main.tmp
 for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>
     setlocal enabledelayedexpansion
@@ -34,4 +35,6 @@ for /f "delims=" %%t in (%1) do (
     echo !row!>>main.tmp
     endlocal
 )
+echo ^<br^>^<br^>>>main.tmp
+echo;
 exit /b 0
