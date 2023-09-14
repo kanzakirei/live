@@ -1,7 +1,7 @@
 @echo off
 pushd "../html" > nul
 for %%f in (*.html) do call :MainFile %%f
-for %%f in (Posts/*.html) do call :MainFile Posts/%%f
+for %%f in (posts/*.html) do call :MainFile posts/%%f
 for %%f in (*.tmp) do del %%f
 popd > nul
 exit /b 0
