@@ -2,6 +2,12 @@
 chcp 65001 > nul
 cd %~dp0 > nul
 
+call createPostHTML.bat
+if %errorlevel% neq 0 (
+  echo Post作成に失敗しました。
+  exit /b %errorlevel%
+)
+
 call includeHTML.bat
 if %errorlevel% neq 0 (
   echo インクルードに失敗しました。
