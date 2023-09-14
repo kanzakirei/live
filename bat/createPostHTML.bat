@@ -24,9 +24,10 @@ exit /b 0
 
 :PostFile
 echo %1
+echo ^<div class="content"^>>>main.tmp
 for /f "delims=" %%t in (%1) do (
     echo ^<p^>%%t^<br^>^</p^>>>main.tmp
-    echo ^<p^>%%t^<br^>^</p^>
     echo|set /p="."
 )
+echo ^</div^>>>main.tmp
 exit /b 0
