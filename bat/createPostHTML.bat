@@ -12,7 +12,7 @@ call :PostFile %1
 set html=%~n1.html
 echo %html%
 type nul>%html%
-for /f "delims=" %%t in (library/postBase.html) do (
+for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
     setlocal enabledelayedexpansion
     echo !row!>>%html%
