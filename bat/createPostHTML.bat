@@ -6,7 +6,7 @@ popd > nul
 exit /b 0
 
 :MainFile
-echo %1
+echo %~n1.html
 type nul>main.tmp
 type nul>../%1
 call :PostFile %1
@@ -24,6 +24,7 @@ echo;
 exit /b 0
 
 :PostFile
+echo %1
 for /f "delims=" %%t in (%1) do (
     echo ^<p^>%%t^<br^>^</p^>>>main.tmp
     echo|set /p="."
