@@ -1,4 +1,3 @@
-
 pushd "../html/posts" > nul
 for %%f in (*.txt) do (
   call :Path %%f
@@ -7,7 +6,6 @@ for %%f in (*.tmp) do (
   del %%f
 )
 popd > nul
-pause
 exit /b 0
 
 :Path
