@@ -4,13 +4,10 @@
 
 今回は、<strong>プライムサブスクライブ</strong>についての説明と利用方法のお話しをします。
 
-<strong>プライムサブスクライブ</strong>とは、
-<strong>Amazonプライム</strong>に加入していて、
-TwitchとAmazonを連携させると利用できる<strong>PrimeGaming特典</strong>のひとつです。
+<strong>プライムサブスクライブ</strong>とは、<strong>Amazonプライム</strong>に加入していて、TwitchとAmazonを連携させると利用できる<strong>PrimeGaming特典</strong>のひとつです。
 
 <strong>PrimeGaming特典</strong>とは
-❄️<strong>無料でサブスクライブ</strong>
-(毎月1つのチャンネルまで)
+❄️<strong>無料でサブスクライブ</strong>(毎月1つのチャンネルまで)
 ❄️<strong>ゲームやゲーム内アイテム・スキン</strong>が無料で貰える。
 
 ぜひ、<strong>Amazonプライム</strong>に加入している方はTwitchとAmazonを連携させて特典を利用してみましょう！
