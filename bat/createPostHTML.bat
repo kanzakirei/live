@@ -16,7 +16,6 @@ call :MainFile %1 %html% ../../%html%
 exit /b 0
 
 :MainFile
-
 if "%~t3" GTR "%~t1" (
   rem exit /b 0
 )
@@ -24,22 +23,22 @@ if "%~t3" GTR "%~t1" (
 set InDir=%1
 set OutDir=%2
 call :PostFile %InDir%
-echo %InDir% to %OutDir%
+
 type nul>%OutDir%
-set /a Count=0
 call :RowCount ../library/postBase.html
+setlocal enabledelayedexpansion
+set /a Count=0
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
-    setlocal enabledelayedexpansion
     set row=!row:../=../../!
     echo !row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
 
     set /a Count=!Count!+1
-    echo !Count!/!MaxCount!
-    endlocal
+    echo %OutDir%(!Count!/!MaxCount!)
 )
+endlocal
 exit /b 0
 
 :PostFile
