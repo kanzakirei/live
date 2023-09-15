@@ -29,7 +29,7 @@ set OutDir=%2
 call :PostFile %InDir%
 echo %InDir% to %OutDir%
 type nul>%OutDir%
-%RowCountBat% ../library/postBase.html
+call %RowCountBat% ../library/postBase.html
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
     setlocal enabledelayedexpansion
