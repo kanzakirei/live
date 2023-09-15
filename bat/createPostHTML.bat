@@ -23,6 +23,7 @@ set OutDir=%2
 set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
+set Count=0
 type nul>%OutDir%
 for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
@@ -31,14 +32,15 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     echo !row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
-
-    set /a Count=Count+1
-    call ../../bat/rowCount.bat !Count! %BaseHTML%
     endlocal
+
+    if exist %%t (set /a Count=Count+1)
+    call ../../bat/rowCount.bat %Count% %BaseHTML%
 )
 exit /b 0
 
 :PostFile
+set Count=0
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
 for /f "delims=" %%t in (%1) do (
@@ -46,10 +48,10 @@ for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>
     set row=!row:../=../../!
     echo !row!>>main.tmp
-
-    set /a Count=Count+1
-    call ../../bat/rowCount.bat !Count! %1
     endlocal
+
+    if exist %%t (set /a Count=Count+1)
+    call ../../bat/rowCount.bat !Count! %1
 )
 echo ^<br^>^<br^>>>main.tmp
 exit /b 0
