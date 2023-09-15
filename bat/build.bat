@@ -14,6 +14,12 @@ if %errorlevel% neq 0 (
   exit /b %errorlevel%
 )
 
+call deletePostHTML.bat
+if %errorlevel% neq 0 (
+  echo Post削除に失敗しました。
+  exit /b %errorlevel%
+)
+
 rem call convertAVIF.bat
 if %errorlevel% neq 0 (
   echo AVIF変換に失敗しました。
