@@ -26,7 +26,7 @@ call :PostFile %InDir%
 
 type nul>%OutDir%
 set /a Count=0
-for /f "delims=" %%t in (!BaseHTML!) do (
+for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
 setlocal enabledelayedexpansion
     set row=!row:../=../../!
