@@ -1,7 +1,4 @@
 @echo off
-set RowCountBat=%~dp0/rowCount.bat
-set Count=
-set MaxCount=
 
 pushd "../html/posts" > nul
 for %%f in (*.txt) do (
@@ -29,7 +26,7 @@ set OutDir=%2
 call :PostFile %InDir%
 echo %InDir% to %OutDir%
 type nul>%OutDir%
-call %RowCountBat% ../library/postBase.html
+call :RowCount ../library/postBase.html
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
     setlocal enabledelayedexpansion
@@ -58,3 +55,6 @@ for /f "delims=" %%t in (%1) do (
 echo ^<br^>^<br^>>>main.tmp
 echo;
 exit /b 0
+
+:RowCount
+for /f "usebackq delims=" %%A in (`find /c /v "" ^< %1`) do set MaxCount=%%A
