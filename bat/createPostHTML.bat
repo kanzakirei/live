@@ -23,7 +23,7 @@ set OutDir=%2
 set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
-set Count=0
+set /a Count=0
 type nul>%OutDir%
 for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
@@ -40,7 +40,7 @@ for /f "delims=" %%t in (%BaseHTML%) do (
 exit /b 0
 
 :PostFile
-set Count=0
+set /a Count=0
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
 for /f "delims=" %%t in (%1) do (

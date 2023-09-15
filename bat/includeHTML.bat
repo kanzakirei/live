@@ -17,7 +17,7 @@ if "%~t2" GTR "%~t1" (
 )
 set InDir=%1
 set OutDir=%2
-set Count=0
+set /a Count=0
 type nul>head.tmp
 type nul>body.tmp
 type nul>main.tmp
@@ -53,7 +53,7 @@ for /f "delims=" %%t in (%InDir%) do (
 exit /b 0
 
 :IncludeFile
-set Count=0
+set /a Count=0
 for /f "delims=" %%i in (%1) do (
   echo "%%i" | find "<head>" > nul
   if not ERRORLEVEL 1 (set tag=head) else (
