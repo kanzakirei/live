@@ -27,12 +27,12 @@ call :PostFile %InDir%
 type nul>%OutDir%
 setlocal enabledelayedexpansion
 set /a Count=0
-for /f "delims=" %%t in (%BaseHTML%) do (
+for /f "delims=" %%t in (!BaseHTML!) do (
     set row=%%t
     set row=!row:../=../../!
     echo !row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>%OutDir%
+    if not ERRORLEVEL 1 type main.tmp>>!OutDir!
 
     set /a Count=!Count!+1
     call ../../bat/rowCount.bat !Count! !BaseHTML!

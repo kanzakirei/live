@@ -25,7 +25,7 @@ type nul>footer.tmp
 type nul>%OutDir%
 setlocal enabledelayedexpansion
 set /a Count=0
-for /f "delims=" %%t in (%InDir%) do (
+for /f "delims=" %%t in (!OutDir!) do (
   echo "%%t" | find "include" > nul
   if not ERRORLEVEL 1 (
     set key=%%t
@@ -35,15 +35,15 @@ for /f "delims=" %%t in (%InDir%) do (
   ) else (
     set dirFix=%%t
     set dirFix=!dirFix:../=!
-    echo !dirFix!>>%OutDir%
+    echo !dirFix!>>!OutDir!
     echo "!dirFix!" | find "<head>" > nul
-    if not ERRORLEVEL 1 type head.tmp>>%OutDir%
+    if not ERRORLEVEL 1 type head.tmp>>!OutDir!
     echo "!dirFix!" | find "<body>" > nul
-    if not ERRORLEVEL 1 type body.tmp>>%OutDir%
+    if not ERRORLEVEL 1 type body.tmp>>!OutDir!
     echo "!dirFix!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>%OutDir%
+    if not ERRORLEVEL 1 type main.tmp>>!OutDir!
     echo "!dirFix!" | find "<footer>" > nul
-    if not ERRORLEVEL 1 type footer.tmp>>%OutDir%
+    if not ERRORLEVEL 1 type footer.tmp>>!OutDir!
   )
   set /a Count=!Count!+1
   call ../bat/rowCount.bat !Count! !InDir!
