@@ -1,6 +1,6 @@
 @echo off
 pushd "../html/posts" > nul
-for %%f in (*.txt) do call :MainFile %%f %%~nf.html
+for %%f in (*.txt) do call :MainFile %%f
 for %%f in (*.tmp) do del %%f
 popd > nul
 exit /b 0
@@ -10,7 +10,7 @@ if "%~t2" GTR "%~t1" (
   exit /b 0
 )
 set InDir=%1
-set OutDir=%2
+set OutDir=%~n1.html
 call :PostFile %InDir%
 
 echo %InDir%→%OutDir%
