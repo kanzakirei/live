@@ -23,19 +23,18 @@ type nul>body.tmp
 type nul>main.tmp
 type nul>footer.tmp
 type nul>%OutDir%
-set /a Count=0
 for /f "delims=" %%t in (%OutDir%) do (
   echo "%%t" | find "include" > nul
   if not ERRORLEVEL 1 (
     set key=%%t
-setlocal enabledelayedexpansion
+    setlocal enabledelayedexpansion
     set key=!key:^<^!--include =!
     set key=!key:--^>=!
     call :IncludeFile !key!
-endlocal
+    endlocal
   ) else (
     set dirFix=%%t
-setlocal enabledelayedexpansion
+    setlocal enabledelayedexpansion
     set dirFix=!dirFix:../=!
     echo !dirFix!>>!OutDir!
     echo "!dirFix!" | find "<head>" > nul
@@ -46,18 +45,12 @@ setlocal enabledelayedexpansion
     if not ERRORLEVEL 1 type main.tmp>>!OutDir!
     echo "!dirFix!" | find "<footer>" > nul
     if not ERRORLEVEL 1 type footer.tmp>>!OutDir!
-endlocal
+    endlocal
   )
-setlocal enabledelayedexpansion
-  rem set /a Count=!Count!+1
-  rem call ../bat/rowCount.bat !Count! !InDir!
-endlocal
 )
 exit /b 0
 
 :IncludeFile
-setlocal enabledelayedexpansion
-set /a Count=0
 for /f "delims=" %%i in (%1) do (
   echo "%%i" | find "<head>" > nul
   if not ERRORLEVEL 1 (set tag=head) else (
@@ -75,10 +68,12 @@ for /f "delims=" %%i in (%1) do (
               if not ERRORLEVEL 1 (set tag=footer) else (
                 echo "%%i" | find "</footer>" > nul
                 if not ERRORLEVEL 1 (set tag=0) else (
+                  setlocal enabledelayedexpansion
                   if !tag! == head echo %%i>>head.tmp
                   if !tag! == body echo %%i>>body.tmp
                   if !tag! == main echo %%i>>main.tmp
                   if !tag! == footer echo %%i>>footer.tmp
+                  endlocal
                 )
               )
             )
@@ -87,8 +82,5 @@ for /f "delims=" %%i in (%1) do (
       )
     )
   )
-  rem set /a Count=!Count!+1
-  rem call ../bat/rowCount.bat !Count! %1
 )
-endlocal
 exit /b 0
