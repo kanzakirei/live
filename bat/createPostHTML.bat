@@ -64,3 +64,4 @@ exit /b 0
 
 :RowCount
 for /f "delims=" %%A in (`find /c /v "" ^< %1`) do set MaxCount=%%A
+exit /b 0
