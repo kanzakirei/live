@@ -85,7 +85,7 @@ for /f "delims=" %%i in (%1) do (
       )
     )
   )
-  if exist %%t (set /a Count=Count+1)
+  if exist %%i (set /a Count=Count+1)
   call ../bat/rowCount.bat !Count! %1
 )
 endlocal
