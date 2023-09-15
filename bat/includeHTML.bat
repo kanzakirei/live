@@ -53,7 +53,6 @@ endlocal
 exit /b 0
 
 :IncludeFile
-echo #include %1
 setlocal enabledelayedexpansion
 set /a Count=0
 for /f "delims=" %%i in (%1) do (
