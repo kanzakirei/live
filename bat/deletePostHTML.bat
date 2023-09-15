@@ -1,4 +1,3 @@
-@echo off
 pushd "../html/posts" > nul
 for %%f in (*.html) do (
   del %%f

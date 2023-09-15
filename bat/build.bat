@@ -1,4 +1,4 @@
-
+@echo off
 chcp 65001 > nul
 cd %~dp0 > nul
 
@@ -26,5 +26,5 @@ if %errorlevel% neq 0 (
   pause
   exit /b %errorlevel%
 )
-
+pause
 exit /b 0

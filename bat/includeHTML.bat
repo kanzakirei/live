@@ -1,4 +1,3 @@
-
 pushd "../html" > nul
 for %%f in (*.html) do (
   call :MainFile %%f ../%%f
@@ -23,7 +22,7 @@ type nul>body.tmp
 type nul>main.tmp
 type nul>footer.tmp
 type nul>%OutDir%
-for /f "delims=" %%t in (%OutDir%) do (
+for /f "delims=" %%t in (%InDir%) do (
   echo "%%t" | find "include" > nul
   if not ERRORLEVEL 1 (
     set key=%%t
