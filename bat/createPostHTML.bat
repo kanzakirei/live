@@ -10,11 +10,12 @@ popd > nul
 exit /b 0
 
 :Path
-call :MainFile %1 %~n1.html
+set html=%~n1.html
+call :MainFile %1 %html% ../../%html%
 exit /b 0
 
 :MainFile
-if "%~t2" GTR "%~t1" (
+if "%~t3" GTR "%~t1" (
   exit /b 0
 )
 set InDir=%1
