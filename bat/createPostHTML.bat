@@ -57,4 +57,4 @@ echo;
 exit /b 0
 
 :RowCount
-for /f "usebackq delims=" %%A in (`find /c /v "" ^< %1`) do set MaxCount=%%A
+for /f "delims=" %%A in (`find /c /v "" ^< %1`) do set MaxCount=%%A
