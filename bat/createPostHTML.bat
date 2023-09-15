@@ -22,13 +22,14 @@ if "%~t3" GTR "%~t1" (
 
 set InDir=%1
 set OutDir=%2
+set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
 type nul>%OutDir%
-call :RowCount ../library/postBase.html
+call :RowCount %BaseHTML%
 setlocal enabledelayedexpansion
 set /a Count=0
-for /f "delims=" %%t in (../library/postBase.html) do (
+for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
     set row=!row:../=../../!
     echo !row!>>%OutDir%
@@ -36,7 +37,7 @@ for /f "delims=" %%t in (../library/postBase.html) do (
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
 
     set /a Count=!Count!+1
-    echo %OutDir%(!Count!/!MaxCount!)
+    echo %OutDir%^(!Count!/!MaxCount!^)
 )
 endlocal
 exit /b 0
@@ -45,13 +46,18 @@ exit /b 0
 echo %1
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
+call :RowCount %1
+setlocal enabledelayedexpansion
+set /a Count=0
 for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>
-    setlocal enabledelayedexpansion
     set row=!row:../=../../!
     echo !row!>>main.tmp
-    endlocal
+
+    set /a Count=!Count!+1
+    echo %1^(!Count!/!MaxCount!^)
 )
+endlocal
 echo ^<br^>^<br^>>>main.tmp
 echo;
 exit /b 0
