@@ -1,4 +1,4 @@
-@echo off
+
 pushd "../html/posts" > nul
 for %%f in (*.txt) do (
   call :Path %%f
