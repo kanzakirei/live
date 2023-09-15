@@ -18,22 +18,22 @@ PrimeGaming特典とは
 ※Amazonプライムに既に加入している方向けの説明になるのでご注意ください。
 
 ①右上の【王冠マーク】を選択します
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ②【無料トライアルを始める】を選択します
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ③ 右上の【サインイン】を選択します
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ④ 青色の【続ける】を選択します
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ⑤ Amazonのログインフォームが表示されるので、ログインします
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ⑥ Twitchのログインフォームが表示されるので、ログインします
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 これでPrimeGaming特典が利用できるようになりました！
 
@@ -42,16 +42,16 @@ PrimeGaming特典とは
 プライムサブスクライブのやり方についてお話しします。
 
 ①
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ②
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ③
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 ④
-<img src="img/no_image.png" alt="nav">
+<img src="../img/no_image.png" alt="nav">
 
 これでプライムサブスクライブをすることができました。
 毎月1つのチャンネルまで無料でサブスクライブができるのでぜひ活用してみてください！
