@@ -44,7 +44,7 @@ for /f "delims=" %%t in (%InDir%) do (
     if not ERRORLEVEL 1 type footer.tmp>>%OutDir%
   )
   set /a Count=Count+1
-  call ../../bat/rowCount.bat !Count! %1
+  call ../bat/rowCount.bat !Count! %1
 )
 endlocal
 exit /b 0
@@ -81,7 +81,7 @@ for /f "delims=" %%i in (%1) do (
     )
   )
   set /a Count=Count+1
-  call ../../bat/rowCount.bat !Count! %1
+  call ../bat/rowCount.bat !Count! %1
 )
 endlocal
 exit /b 0
