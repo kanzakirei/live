@@ -1,12 +1,16 @@
 @echo off
 pushd "../html/posts" > nul
 for %%f in (*.txt) do (
-  call :MainFile %%f %~nf.html
+  call :Path %%f
 )
 for %%f in (*.tmp) do (
   del %%f
 )
 popd > nul
+exit /b 0
+
+:Path
+call :MainFile %1 %~n1.html
 exit /b 0
 
 :MainFile
