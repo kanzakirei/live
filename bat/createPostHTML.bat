@@ -30,7 +30,7 @@ set /a Count=0
 for /f "delims=" %%t in (!BaseHTML!) do (
     set row=%%t
     set row=!row:../=../../!
-    echo !row!>>%OutDir%
+    echo !row!>>!OutDir!
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>!OutDir!
 
