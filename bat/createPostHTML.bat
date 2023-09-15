@@ -52,7 +52,7 @@ for /f "delims=" %%t in (%1) do (
     echo !row!>>main.tmp
 
     set /a Count=!Count!+1
-    call ../../bat/rowCount.bat !Count! !BaseHTML!
+    call ../../bat/rowCount.bat !Count! !%1!
 )
 endlocal
 echo ^<br^>^<br^>>>main.tmp
