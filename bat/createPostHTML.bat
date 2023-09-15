@@ -26,7 +26,7 @@ set OutDir=%2
 call :PostFile %InDir%
 echo %InDir% to %OutDir%
 type nul>%OutDir%
-set Count=0
+set /a Count=0
 call :RowCount ../library/postBase.html
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
