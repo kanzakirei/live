@@ -1,3 +1,4 @@
 @echo off
-set MaxCount=
-for /f "usebackq delims=" %%A in (`find /c /v "" ^< %1`) do set MaxCount=%%A
+for /f "usebackq delims=" %%A in (`find /c /v "" ^< %2`) do (
+  echo %2 ^[%1/%%A^]
+)
