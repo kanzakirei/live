@@ -51,7 +51,7 @@ for /f "delims=" %%t in (%1) do (
     endlocal
 
     if exist %%t (set /a Count=Count+1)
-    call ../../bat/rowCount.bat !Count! %1
+    call ../../bat/rowCount.bat %Count% %1
 )
 echo ^<br^>^<br^>>>main.tmp
 exit /b 0

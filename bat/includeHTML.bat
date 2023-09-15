@@ -48,7 +48,7 @@ for /f "delims=" %%t in (%InDir%) do (
     endlocal
   )
   if exist %%t (set /a Count=Count+1)
-  call ../bat/rowCount.bat !Count! %1
+  call ../bat/rowCount.bat %Count% %1
 )
 exit /b 0
 
@@ -86,7 +86,7 @@ for /f "delims=" %%i in (%1) do (
     )
   )
   if exist %%i (set /a Count=Count+1)
-  call ../bat/rowCount.bat !Count! %1
+  call ../bat/rowCount.bat %Count% %1
 )
 endlocal
 exit /b 0
