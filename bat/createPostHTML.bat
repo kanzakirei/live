@@ -52,7 +52,6 @@ for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>
     setlocal enabledelayedexpansion
     set row=!row:../=../../!
-    echo !row!
     echo !row!>>main.tmp
     endlocal
 )
