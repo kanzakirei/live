@@ -29,9 +29,9 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
     setlocal enabledelayedexpansion
     set row=!row:../=../../!
-    echo !row!>>!OutDir!
+    echo !row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>!OutDir!
+    if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     endlocal
 )
 exit /b 0

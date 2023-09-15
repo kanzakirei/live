@@ -36,15 +36,15 @@ for /f "delims=" %%t in (%OutDir%) do (
     set dirFix=%%t
     setlocal enabledelayedexpansion
     set dirFix=!dirFix:../=!
-    echo !dirFix!>>!OutDir!
+    echo !dirFix!>>%OutDir%
     echo "!dirFix!" | find "<head>" > nul
-    if not ERRORLEVEL 1 type head.tmp>>!OutDir!
+    if not ERRORLEVEL 1 type head.tmp>>%OutDir%
     echo "!dirFix!" | find "<body>" > nul
-    if not ERRORLEVEL 1 type body.tmp>>!OutDir!
+    if not ERRORLEVEL 1 type body.tmp>>%OutDir%
     echo "!dirFix!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>!OutDir!
+    if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     echo "!dirFix!" | find "<footer>" > nul
-    if not ERRORLEVEL 1 type footer.tmp>>!OutDir!
+    if not ERRORLEVEL 1 type footer.tmp>>%OutDir%
     endlocal
   )
 )
