@@ -22,17 +22,19 @@ type nul>head.tmp
 type nul>body.tmp
 type nul>main.tmp
 type nul>footer.tmp
-setlocal enabledelayedexpansion
-type nul>!OutDir!
+type nul>%OutDir%
 set /a Count=0
-for /f "delims=" %%t in (!OutDir!) do (
+for /f "delims=" %%t in (%OutDir%) do (
   echo "%%t" | find "include" > nul
   if not ERRORLEVEL 1 (
+setlocal enabledelayedexpansion
     set key=%%t
     set key=!key:^<^!--include =!
     set key=!key:--^>=!
     call :IncludeFile !key!
+endlocal
   ) else (
+setlocal enabledelayedexpansion
     set dirFix=%%t
     set dirFix=!dirFix:../=!
     echo !dirFix!>>!OutDir!
@@ -44,11 +46,13 @@ for /f "delims=" %%t in (!OutDir!) do (
     if not ERRORLEVEL 1 type main.tmp>>!OutDir!
     echo "!dirFix!" | find "<footer>" > nul
     if not ERRORLEVEL 1 type footer.tmp>>!OutDir!
+endlocal
   )
+setlocal enabledelayedexpansion
   set /a Count=!Count!+1
   call ../bat/rowCount.bat !Count! !InDir!
-)
 endlocal
+)
 exit /b 0
 
 :IncludeFile
