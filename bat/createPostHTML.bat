@@ -17,7 +17,7 @@ set InDir=%1
 set OutDir=%2
 call :PostFile %InDir%
 
-echo %InDir%→%OutDir%
+echo %InDir% to %OutDir%
 type nul>%OutDir%
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
