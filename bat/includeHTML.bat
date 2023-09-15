@@ -1,19 +1,21 @@
 @echo off
 pushd "../html" > nul
-for %%f in (*.html) do call :MainFile %%f
-for %%f in (posts/*.html) do call :MainFile posts/%%f
+for %%f in (*.html) do call :MainFile %%f ../%%f
+for %%f in (posts/*.html) do call :MainFile posts/%%f ../posts/%%f
 for %%f in (*.tmp) do del %%f
 popd > nul
 exit /b 0
 
 :MainFile
-echo %1
+set InDir=%1
+set OutDir=%2
+echo %InDir% to %OutDir%
 type nul>head.tmp
 type nul>body.tmp
 type nul>main.tmp
 type nul>footer.tmp
-type nul>../%1
-for /f "delims=" %%t in (%1) do (
+type nul>%OutDir%
+for /f "delims=" %%t in (%InDir%) do (
   echo "%%t" | find "include" > nul
   if not ERRORLEVEL 1 (
     set key=%%t
@@ -26,15 +28,15 @@ for /f "delims=" %%t in (%1) do (
     set dirFix=%%t
     setlocal enabledelayedexpansion
     set dirFix=!dirFix:../=!
-    echo !dirFix!>>../%1
+    echo !dirFix!>>%OutDir%
     echo "!dirFix!" | find "<head>" > nul
-    if not ERRORLEVEL 1 type head.tmp>>../%1
+    if not ERRORLEVEL 1 type head.tmp>>%OutDir%
     echo "!dirFix!" | find "<body>" > nul
-    if not ERRORLEVEL 1 type body.tmp>>../%1
+    if not ERRORLEVEL 1 type body.tmp>>%OutDir%
     echo "!dirFix!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>../%1
+    if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     echo "!dirFix!" | find "<footer>" > nul
-    if not ERRORLEVEL 1 type footer.tmp>>../%1
+    if not ERRORLEVEL 1 type footer.tmp>>%OutDir%
     endlocal
     echo|set /p="."
   )
