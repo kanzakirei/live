@@ -2,56 +2,42 @@
 
 はいどうも、神崎怜と申します。よろしくお願いします！
 
-今回は、プライムサブスクライブについての説明と利用方法のお話しをします。
+今回は、<strong>プライムサブスクライブ</strong>についての説明と利用方法のお話しをします。
 
-プライムサブスクライブとは、Amazonプライムに加入していて、TwitchとAmazonを連携させると利用できるPrimeGaming特典のひとつです。
+<strong>プライムサブスクライブ</strong>とは、<strong>Amazonプライム</strong>に加入していて、TwitchとAmazonを連携させると利用できる<strong>PrimeGaming特典</strong>のひとつです。
 
-<h3>PrimeGaming特典</h3>とは
-❄️無料でサブスクライブ(毎月1つのチャンネルまで)
-❄️ゲームやゲーム内アイテム・スキンが無料で貰える。
+<strong>PrimeGaming特典</strong>とは
+❄️<strong>無料でサブスクライブ</strong>(毎月1つのチャンネルまで)
+❄️<strong>ゲームやゲーム内アイテム・スキン</strong>が無料で貰える。
 
-ぜひ、Amazonプライムに加入している方はTwitchとAmazonを連携させて特典を利用してみましょう！
+ぜひ、<strong>Amazonプライム</strong>に加入している方はTwitchとAmazonを連携させて特典を利用してみましょう！
 
-<div class="line"></div>
+ここからは、<strong>PrimeGaming特典</strong>を利用するための方法のお話をします。
+※<strong>Amazonプライム</strong>に既に加入している方向けの説明になるのでご注意ください。
 
-ここからは、PrimeGaming特典を利用するための方法のお話をします。
-※Amazonプライムに既に加入している方向けの説明になるのでご注意ください。
+①右上の<b>【王冠マーク】</b>を選択します
 
-①右上の【王冠マーク】を選択します
-<img src="../img/no_image.png" alt="nav">
+②<b>【無料トライアルを始める】</b>を選択します
 
-②【無料トライアルを始める】を選択します
-<img src="../img/no_image.png" alt="nav">
+③ 右上の<b>【サインイン】</b>を選択します
 
-③ 右上の【サインイン】を選択します
-<img src="../img/no_image.png" alt="nav">
+④ 青色の<b>【続ける】</b>を選択します
 
-④ 青色の【続ける】を選択します
-<img src="../img/no_image.png" alt="nav">
+⑤ <b>Amazon</b>のログインフォームが表示されるので、<b>ログイン</b>します
 
-⑤ Amazonのログインフォームが表示されるので、ログインします
-<img src="../img/no_image.png" alt="nav">
+⑥ <b>Twitch</b>のログインフォームが表示されるので、<b>ログイン</b>します
 
-⑥ Twitchのログインフォームが表示されるので、ログインします
-<img src="../img/no_image.png" alt="nav">
+これで<strong>PrimeGaming特典</strong>が利用できるようになりました！
 
-これでPrimeGaming特典が利用できるようになりました！
-
-<div class="line"></div>
-
-プライムサブスクライブのやり方についてお話しします。
+<strong>プライムサブスクライブ</strong>のやり方についてお話しします。
 
 ①
-<img src="../img/no_image.png" alt="nav">
 
 ②
-<img src="../img/no_image.png" alt="nav">
 
 ③
-<img src="../img/no_image.png" alt="nav">
 
 ④
-<img src="../img/no_image.png" alt="nav">
 
-これでプライムサブスクライブをすることができました。
-毎月1つのチャンネルまで無料でサブスクライブができるのでぜひ活用してみてください！
+これで<strong>プライムサブスクライブ</strong>をすることができました。
+毎月1つのチャンネルまで<strong>無料でサブスクライブ</strong>ができるのでぜひ活用してみてください！
