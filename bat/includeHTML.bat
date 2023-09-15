@@ -27,15 +27,15 @@ set /a Count=0
 for /f "delims=" %%t in (%OutDir%) do (
   echo "%%t" | find "include" > nul
   if not ERRORLEVEL 1 (
-setlocal enabledelayedexpansion
     set key=%%t
+setlocal enabledelayedexpansion
     set key=!key:^<^!--include =!
     set key=!key:--^>=!
     call :IncludeFile !key!
 endlocal
   ) else (
-setlocal enabledelayedexpansion
     set dirFix=%%t
+setlocal enabledelayedexpansion
     set dirFix=!dirFix:../=!
     echo !dirFix!>>!OutDir!
     echo "!dirFix!" | find "<head>" > nul

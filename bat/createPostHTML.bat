@@ -27,8 +27,8 @@ call :PostFile %InDir%
 type nul>%OutDir%
 set /a Count=0
 for /f "delims=" %%t in (!BaseHTML!) do (
-setlocal enabledelayedexpansion
     set row=%%t
+setlocal enabledelayedexpansion
     set row=!row:../=../../!
     echo !row!>>!OutDir!
     echo "!row!" | find "<main>" > nul
@@ -45,14 +45,14 @@ type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
 set /a Count=0
 for /f "delims=" %%t in (%1) do (
-setlocal enabledelayedexpansion
     set row=    ^<p^>%%t^<br^>^</p^>
+setlocal enabledelayedexpansion
     set row=!row:../=../../!
     echo !row!>>main.tmp
 
     set /a Count=!Count!+1
     call ../../bat/rowCount.bat !Count! %1
-echo ^<br^>^<br^>>>main.tmp
-)
 endlocal
+)
+echo ^<br^>^<br^>>>main.tmp
 exit /b 0
