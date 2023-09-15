@@ -15,6 +15,7 @@ type nul>%html%
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
     setlocal enabledelayedexpansion
+    set row=!row:^==../../!
     echo !row!>>%html%
     echo !row!
     echo "!row!" | find "<main>" > nul
