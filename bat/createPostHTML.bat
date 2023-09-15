@@ -24,8 +24,8 @@ set OutDir=%2
 set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
-type nul>%OutDir%
 setlocal enabledelayedexpansion
+type nul>!OutDir!
 set /a Count=0
 for /f "delims=" %%t in (!BaseHTML!) do (
     set row=%%t
@@ -41,9 +41,9 @@ endlocal
 exit /b 0
 
 :PostFile
+setlocal enabledelayedexpansion
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
-setlocal enabledelayedexpansion
 set /a Count=0
 for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>

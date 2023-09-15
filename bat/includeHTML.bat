@@ -22,8 +22,8 @@ type nul>head.tmp
 type nul>body.tmp
 type nul>main.tmp
 type nul>footer.tmp
-type nul>%OutDir%
 setlocal enabledelayedexpansion
+type nul>!OutDir!
 set /a Count=0
 for /f "delims=" %%t in (!OutDir!) do (
   echo "%%t" | find "include" > nul
