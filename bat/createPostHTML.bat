@@ -26,8 +26,8 @@ set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
 type nul>%OutDir%
-call :RowCount %BaseHTML%
 setlocal enabledelayedexpansion
+call :RowCount %BaseHTML%
 set /a Count=0
 for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
@@ -37,7 +37,7 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
 
     set /a Count=!Count!+1
-    echo %OutDir%^(!Count!/!MaxCount!^)
+    echo %OutDir%^[!Count!/!MaxCount!^]
 )
 endlocal
 exit /b 0
@@ -46,8 +46,8 @@ exit /b 0
 echo %1
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
-call :RowCount %1
 setlocal enabledelayedexpansion
+call :RowCount %1
 set /a Count=0
 for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>
@@ -55,7 +55,7 @@ for /f "delims=" %%t in (%1) do (
     echo !row!>>main.tmp
 
     set /a Count=!Count!+1
-    echo %1^(!Count!/!MaxCount!^)
+    echo %1^[!Count!/!MaxCount!^]
 )
 endlocal
 echo ^<br^>^<br^>>>main.tmp
