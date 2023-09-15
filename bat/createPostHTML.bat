@@ -16,7 +16,7 @@ exit /b 0
 
 :MainFile
 if "%~t3" GTR "%~t1" (
-  exit /b 0
+  rem exit /b 0
 )
 
 set InDir=%1
