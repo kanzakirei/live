@@ -49,8 +49,8 @@ setlocal enabledelayedexpansion
 endlocal
   )
 setlocal enabledelayedexpansion
-  set /a Count=!Count!+1
-  call ../bat/rowCount.bat !Count! !InDir!
+  rem set /a Count=!Count!+1
+  rem call ../bat/rowCount.bat !Count! !InDir!
 endlocal
 )
 exit /b 0
@@ -87,8 +87,8 @@ for /f "delims=" %%i in (%1) do (
       )
     )
   )
-  set /a Count=!Count!+1
-  call ../bat/rowCount.bat !Count! %1
+  rem set /a Count=!Count!+1
+  rem call ../bat/rowCount.bat !Count! %1
 )
 endlocal
 exit /b 0
