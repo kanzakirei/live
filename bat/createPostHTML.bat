@@ -1,25 +1,28 @@
 @echo off
 pushd "../html/posts" > nul
-for %%f in (*.txt) do call :MainFile %%f
+for %%f in (*.txt) do call :MainFile %%f %%~nf.html
 for %%f in (*.tmp) do del %%f
 popd > nul
 exit /b 0
 
 :MainFile
+if "%~t2" GTR "%~t1" (
+  exit /b 0
+)
+set InDir=%1
+set OutDir=%2
+call :PostFile %InDir%
 
-call :PostFile %1
-
-set html=%~n1.html
-echo %html%
-type nul>%html%
+echo %InDir%→%OutDir%
+type nul>%OutDir%
 for /f "delims=" %%t in (../library/postBase.html) do (
     set row=%%t
     setlocal enabledelayedexpansion
     set row=!row:../=../../!
-    echo !row!>>%html%
+    echo !row!>>%OutDir%
     echo !row!
     echo "!row!" | find "<main>" > nul
-    if not ERRORLEVEL 1 type main.tmp>>%html%
+    if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     endlocal
 )
 echo;
