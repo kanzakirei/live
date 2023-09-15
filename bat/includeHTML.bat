@@ -7,6 +7,9 @@ popd > nul
 exit /b 0
 
 :MainFile
+if "%~t2" GTR "%~t1" (
+  exit /b 0
+)
 set InDir=%1
 set OutDir=%2
 echo %InDir% to %OutDir%
