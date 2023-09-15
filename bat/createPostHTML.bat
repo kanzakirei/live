@@ -1,6 +1,4 @@
 @echo off
-set RowCountBat=%~dp0/rowCount.bat
-
 pushd "../html/posts" > nul
 for %%f in (*.txt) do (
   call :Path %%f
@@ -37,7 +35,7 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
 
     set /a Count=!Count!+1
-    call RowCountBat !Count! !BaseHTML!
+    call %~dp0/rowCount.bat !Count! !BaseHTML!
 )
 endlocal
 exit /b 0
@@ -54,7 +52,7 @@ for /f "delims=" %%t in (%1) do (
     echo !row!>>main.tmp
 
     set /a Count=!Count!+1
-    call RowCountBat !Count! %1
+    call %~dp0/rowCount.bat !Count! %1
 )
 endlocal
 echo ^<br^>^<br^>>>main.tmp
