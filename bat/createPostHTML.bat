@@ -16,7 +16,7 @@ exit /b 0
 
 :MainFile
 if "%~t3" GTR "%~t1" (
-  rem exit /b 0
+  exit /b 0
 )
 
 set InDir=%1
@@ -41,7 +41,6 @@ endlocal
 exit /b 0
 
 :PostFile
-echo %1
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
 setlocal enabledelayedexpansion
