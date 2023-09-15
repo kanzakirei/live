@@ -24,9 +24,9 @@ set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
 type nul>%OutDir%
-setlocal enabledelayedexpansion
 for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
+    setlocal enabledelayedexpansion
     set row=!row:../=../../!
     echo !row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
@@ -34,22 +34,22 @@ for /f "delims=" %%t in (%BaseHTML%) do (
 
     set /a Count=Count+1
     call ../../bat/rowCount.bat !Count! %BaseHTML%
+    endlocal
 )
-endlocal
 exit /b 0
 
 :PostFile
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
-setlocal enabledelayedexpansion
 for /f "delims=" %%t in (%1) do (
+    setlocal enabledelayedexpansion
     set row=    ^<p^>%%t^<br^>^</p^>
     set row=!row:../=../../!
     echo !row!>>main.tmp
 
     set /a Count=Count+1
     call ../../bat/rowCount.bat !Count! %1
+    endlocal
 )
-endlocal
 echo ^<br^>^<br^>>>main.tmp
 exit /b 0
