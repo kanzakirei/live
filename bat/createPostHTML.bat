@@ -35,7 +35,7 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
 
     set /a Count=!Count!+1
-    call %~dp0/rowCount.bat !Count! !BaseHTML!
+    call %~dp0/bat/rowCount.bat !Count! !BaseHTML!
 )
 endlocal
 exit /b 0
@@ -52,7 +52,7 @@ for /f "delims=" %%t in (%1) do (
     echo !row!>>main.tmp
 
     set /a Count=!Count!+1
-    call %~dp0/rowCount.bat !Count! %1
+    call %~dp0/bat/rowCount.bat !Count! !BaseHTML!
 )
 endlocal
 echo ^<br^>^<br^>>>main.tmp
