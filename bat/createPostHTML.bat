@@ -36,7 +36,7 @@ for /f "delims=" %%t in (../library/postBase.html) do (
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
 
-    set /a Count=Count+1
+    set /a Count=!Count!+1
     echo !Count!/!MaxCount!
     endlocal
 )
