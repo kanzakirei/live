@@ -47,7 +47,7 @@ for /f "delims=" %%t in (%InDir%) do (
     endlocal
   )
 )
-echo Include %OutDir%
+echo Include %~nx2
 exit /b 0
 
 :IncludeFile
