@@ -33,7 +33,7 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     endlocal
 )
-echo CreatePost %OutDir%
+echo CreatePost %~nx2
 exit /b 0
 
 :PostFile
