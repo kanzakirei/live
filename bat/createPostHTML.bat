@@ -31,11 +31,9 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     echo !row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
-
-    set /a Count+=1
-    call ../../bat/rowCount.bat !Count! %BaseHTML%
     endlocal
 )
+echo CreatePost %OutDir%
 exit /b 0
 
 :PostFile
@@ -46,9 +44,6 @@ for /f "delims=" %%t in (%1) do (
     set row=    ^<p^>%%t^<br^>^</p^>
     set row=!row:../=../../!
     echo !row!>>main.tmp
-
-    set /a Count+=1
-    call ../../bat/rowCount.bat !Count! %1
     endlocal
 )
 echo ^<br^>^<br^>>>main.tmp
