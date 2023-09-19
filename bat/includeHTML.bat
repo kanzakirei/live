@@ -13,7 +13,7 @@ exit /b 0
 
 :MainFile
 if "%~t2" GTR "%~t1" (
-  rem exit /b 0
+  exit /b 0
 )
 set InDir=%1
 set OutDir=%2
