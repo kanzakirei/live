@@ -1,8 +1,8 @@
-<h1>Minecraftガイド</h1>
+<h1>Minecraftイベントガイド</h1>
 <h2>概要</h2>
-<strong>リアルタイム</strong>に開拓可能な<strong>範囲が広がる</strong>ワールドで、<strong>どれだけ</strong>開拓ができるかを楽しむイベントです。
+<strong>リアルタイム</strong>に開拓可能な<strong>範囲が広がる</strong>ワールドで、<strong>どれだけ開拓</strong>ができるかを楽しむイベントです。
 <br>
-<strong>シーズン制</strong>になっており、ある範囲まで広がったタイミングで<strong>開拓終了</strong>となります。
+ある範囲まで広がったタイミングで<strong>開拓終了</strong>となります。
 <br>
 その後にマップを見て回れるように<strong>アドベンチャーモード</strong>で<strong>一定期間開放</strong>されます。
 <br>
