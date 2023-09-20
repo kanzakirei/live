@@ -1,6 +1,6 @@
 @echo off
-set tool=%~dp0/cavif
 pushd "../img" > nul
+set tool=../bat/cavif.exe
 for /r %%f in (*.png,*.jpg) do (
   if not exist %%~dpnf.avif %tool% %%f
 )
