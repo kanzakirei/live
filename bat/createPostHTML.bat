@@ -28,7 +28,7 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     set row=%%t
     setlocal enabledelayedexpansion
     set row=!row:../=../../!
-    echo !row!>>%OutDir%
+    echo.!row!>>%OutDir%
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     endlocal
@@ -43,7 +43,7 @@ for /f "delims=" %%t in (%1) do (
     setlocal enabledelayedexpansion
     set row=    ^<p^>%%t^<br^>^</p^>
     set row=!row:../=../../!
-    echo !row!>>main.tmp
+    echo.!row!>>main.tmp
     endlocal
 )
 echo ^<br^>^<br^>>>main.tmp
