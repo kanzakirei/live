@@ -20,7 +20,7 @@ if %errorlevel% neq 0 (
   exit /b %errorlevel%
 )
 
-call convertAVIF.bat
+rem call convertAVIF.bat
 if %errorlevel% neq 0 (
   echo AVIF変換に失敗しました。
   pause
