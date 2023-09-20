@@ -38,7 +38,7 @@ for /f "delims=" %%t in (%InDir%) do (
     set dirFix=%%t
     setlocal enabledelayedexpansion
     set dirFix=!dirFix:../=!
-    echo.!dirFix!>>%OutDir%
+    (echo.!dirFix!) >> %OutDir%
     echo "!dirFix!" | find "<head>" > nul
     if not ERRORLEVEL 1 type head.tmp>>%OutDir%
     echo "!dirFix!" | find "<body>" > nul
@@ -72,10 +72,10 @@ for /f "delims=" %%i in (%1) do (
                 echo "%%i" | find "</footer>" > nul
                 if not ERRORLEVEL 1 (set tag=0) else (
                   setlocal enabledelayedexpansion
-                  if !tag! == head echo.%%i>>head.tmp
-                  if !tag! == body echo.%%i>>body.tmp
-                  if !tag! == main echo.%%i>>main.tmp
-                  if !tag! == footer echo.%%i>>footer.tmp
+                  if !tag! == head (echo.%%i) >> head.tmp
+                  if !tag! == body (echo.%%i) >> body.tmp
+                  if !tag! == main (echo.%%i) >> main.tmp
+                  if !tag! == footer (echo.%%i) >> footer.tmp
                   endlocal
                 )
               )
