@@ -1,3 +1,6 @@
+@echo off
+chcp 65001 > nul
+
 pushd "../html" > nul
 for %%f in (*.html) do (
   call :MainFile %%f ../%%f

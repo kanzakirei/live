@@ -1,3 +1,6 @@
+@echo off
+chcp 65001 > nul
+
 pushd "../html/posts" > nul
 for %%f in (*.txt) do (
   call :Path %%f
