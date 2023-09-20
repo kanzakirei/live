@@ -32,8 +32,8 @@ for /f "delims=" %%t in (%BaseHTML%) do (
     echo "!row!" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
     endlocal
+    call ../../bat/rowCount.bat %%x %OutDir%
 )
-echo CreatePost %~nx2
 exit /b 0
 
 :PostFile
