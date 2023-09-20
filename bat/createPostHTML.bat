@@ -39,12 +39,8 @@ exit /b 0
 :PostFile
 type nul>main.tmp
 echo ^<br^>^<br^>>>main.tmp
-for /f "delims=" %%t in (%1) do (
-    setlocal enabledelayedexpansion
-    set row=    ^<p^>%%t^<br^>^</p^>
-    set row=!row:../=../../!
-    echo.!row!>>main.tmp
-    endlocal
+for /f "tokens=1* delims=: eol=" %%t in ('findstr /n "^" %1') do (
+    (echo.   ^<p^>%%t^<br^>^</p^>) >> main.tmp
 )
 echo ^<br^>^<br^>>>main.tmp
 exit /b 0
