@@ -465,7 +465,7 @@ summary::-webkit-details-marker {
 
 @font-face {
   font-family: 'MOBOFont';
-  src: url("../font/MOBO-Regular.otf");
+  src: url("../font/MOBO-SemiBold.otf");
 }
 
 @keyframes fadeInAnime {
