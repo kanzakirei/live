@@ -1,12 +1,32 @@
-<h1>Minecraftイベントガイド</h1>
+<h1>Minecraftイベントについて</h1>
 <h2>概要</h2>
-<strong>リアルタイム</strong>に開拓可能な<strong>範囲が広がる</strong>ワールドで、<strong>どれだけ開拓</strong>ができるかを楽しむイベントです。
+行動できる範囲が<strong>リアルタイム</strong>で広がるワールドで、<strong>どれだけ開拓</strong>ができるかを楽しむイベントです。
 
-ある範囲まで広がったタイミングで<strong>開拓終了</strong>となります。
+ワールドが広がりきったタイミングで<strong>開拓終了</strong>となります。
 
-その後にマップを見て回れるように<strong>アドベンチャーモード</strong>で<strong>一定期間開放</strong>されます。
+その後に開拓したワールド見れるように<strong>アドベンチャーモード</strong>で<strong>一定期間開放</strong>されます。
 
-また、開拓されたワールドは<strong>今後のイベント</strong>で使用する予定です。(<strong>PVP</strong>や<strong>アスレチック</strong>)
+また、このイベントによって開拓したワールドは<strong>今後のイベント</strong>で使用する予定です。(<strong>PVP</strong>や<strong>アスレチック</strong>)
 
 みんなで力を合わせて、<strong>綺麗なワールド</strong>にしましょう！
 
+<h2>ルール</h2>
+<h3>参加</h3>
+<strong>鯖主からの招待制</strong>となりますので、知人の参加は<strong>鯖主までご連絡</strong>お願いいたします。
+<b>※ホワイトリストを設定している為、勝手に参加はできないようになっています。</b>
+
+<h3>稼働時間</h3>
+サーバーは<strong>24時間稼働</strong>しておりますので、好きなタイミングでお楽しみください。
+また、<strong>配信</strong>をしながら遊んでいただくことも可能です。
+
+<h3>エリア</h3>
+中心を境界とし、<strong>"上が戦闘エリア"</strong>で<strong>"下が非戦闘エリア"</strong>で分かれています。
+行き来しても良し、滞在しても良しなのでお好きな方でお楽しみください。
+<b>※喧嘩をせず仲良く楽しみましょう。</b>
+
+<h3>アイテム</h3>
+<strong>共有</strong>しても、<strong>個人</strong>で保持しても問題ありません。<strong>戦闘エリア</strong>ではアイテムを奪うことが許されていますが、<strong>非戦闘エリア</strong>ではアイテムを奪えないようになっています。
+
+<h3>マナー</h3>
+<strong>荒らし</strong>、<strong>誹謗中傷</strong>、<strong>いじめ</strong>などの<strong>マナー</strong>を守れない方は<strong>Ban対象</strong>となりますのでご注意ください。
+<b>※他のMinecraftイベントにも参加できなくなります。</b>
