@@ -42,9 +42,11 @@ exit /b 0
 
 :PostFile
 type nul>main.tmp
-(echo.      ^<br^>^<br^>) >> main.tmp
+(echo.      <div class="content">) >> main.tmp
+(echo.        ^<br^>^<br^>) >> main.tmp
 for /f "tokens=1* delims=: eol=" %%x in ('findstr /n "^" %1') do (
-    (echo.      ^<p^>%%y^<br^>^</p^>) >> main.tmp
+    (echo.        ^<p^>%%y^<br^>^</p^>) >> main.tmp
 )
-(echo.      ^<br^>^<br^>) >> main.tmp
+(echo.        ^<br^>^<br^>) >> main.tmp
+(echo.      </div>) >> main.tmp
 exit /b 0
