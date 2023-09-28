@@ -17,8 +17,8 @@ call :MainFile %1 ../../posts/%html%
 exit /b 0
 
 :MainFile
-if exist %~1 (
-    if exist %~2 (
+if exist %1 (
+    if exist %2 (
         if "%~t1" GTR "%~t2" (
             rem exit /b 0
         )
