@@ -19,7 +19,7 @@ exit /b 0
 :MainFile
 if exist %1 (
     if exist %2 (
-        if "%~t1" GTR "%~t2" (
+        if "%~t2" GTR "%~t1" (
             rem exit /b 0
         )
     )
