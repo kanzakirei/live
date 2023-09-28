@@ -13,7 +13,7 @@ exit /b 0
 
 :Path
 set html=%~n1.html
-call :MainFile %1 %html% ../../%html%
+call :MainFile %1 %html% ../../posts/%html%
 exit /b 0
 
 :MainFile
