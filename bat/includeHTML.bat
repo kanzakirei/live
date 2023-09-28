@@ -35,19 +35,15 @@ for /f "delims=" %%t in (%InDir%) do (
     call :IncludeFile !key!
     endlocal
   ) else (
-    set dirFix=%%t
-    setlocal enabledelayedexpansion
-    set dirFix=!dirFix:../=!
-    (echo.!dirFix!) >> %OutDir%
-    echo "!dirFix!" | find "<head>" > nul
+    (echo.%%t) >> %OutDir%
+    echo "%%t" | find "<head>" > nul
     if not ERRORLEVEL 1 type head.tmp>>%OutDir%
-    echo "!dirFix!" | find "<body>" > nul
+    echo "%%t" | find "<body>" > nul
     if not ERRORLEVEL 1 type body.tmp>>%OutDir%
-    echo "!dirFix!" | find "<main>" > nul
+    echo "%%t" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
-    echo "!dirFix!" | find "<footer>" > nul
+    echo "%%t" | find "<footer>" > nul
     if not ERRORLEVEL 1 type footer.tmp>>%OutDir%
-    endlocal
   )
 )
 echo Include %~nx2
