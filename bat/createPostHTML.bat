@@ -13,16 +13,20 @@ exit /b 0
 
 :Path
 set html=%~n1.html
-call :MainFile %1 %html% ../../posts/%html%
+call :MainFile %1 ../../posts/%html%
 exit /b 0
 
 :MainFile
-if "%~t3" GTR "%~t1" (
-  rem exit /b 0
+if exist %~1 (
+  if exist %~2 (
+    if "%~t1" GTR "%~t2" (
+      rem exit /b 0
+    )
+  )
 )
 
 set InDir=%1
-set OutDir=%2
+set OutDir=%~nx2
 set BaseHTML=../library/postBase.html
 call :PostFile %InDir%
 
