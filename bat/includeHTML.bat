@@ -6,7 +6,7 @@ for %%f in (*.html) do (
   call :MainFile %%f ../%%f
 )
 for %%f in (posts/*.html) do (
-  call :MainFile posts/%%f ../%%f
+  call :MainFile posts/%%f ../posts/%%f
 )
 for %%f in (*.tmp) do (
   del %%f
