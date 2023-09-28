@@ -32,14 +32,9 @@ call :PostFile %InDir%
 
 type nul>%OutDir%
 for /f "delims=" %%t in (%BaseHTML%) do (
-    set row=%%t
-    setlocal enabledelayedexpansion
-    set row=!row:../=../../!
-    (echo.!row!) >> %OutDir%
-
-    echo "!row!" | find "<main>" > nul
+    (echo.%%t) >> %OutDir%
+    echo "%%t" | find "<main>" > nul
     if not ERRORLEVEL 1 type main.tmp>>%OutDir%
-    endlocal
 )
 echo CreatePost %~nx2
 exit /b 0
