@@ -20,7 +20,7 @@ exit /b 0
 if exist %1 (
     if exist %2 (
         if "%~t2" GTR "%~t1" (
-            exit /b 0
+            rem exit /b 0
         )
     )
 )
