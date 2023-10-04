@@ -26,7 +26,7 @@ if %errorlevel% neq 0 (
   exit /b %errorlevel%
 )
 
-rem call convertAVIF.bat
+call convertAVIF.bat
 if %errorlevel% neq 0 (
   echo Failure: convertAVIF.bat
   exit /b %errorlevel%
