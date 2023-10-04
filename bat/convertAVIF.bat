@@ -8,4 +8,4 @@ for /r %%f in (*.png,*.jpg) do (
   )
 )
 popd > nul
-exit /b %errorlevel%
+exit /b 0
