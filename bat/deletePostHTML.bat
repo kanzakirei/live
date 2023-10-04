@@ -17,6 +17,7 @@ exit /b 0
 
 :Delete
 if not exist "%~pn1.txt" (
+  echo Delete %~nx1
   del %~nx1
 )
 exit /b 0
