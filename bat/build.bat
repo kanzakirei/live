@@ -14,7 +14,7 @@ if %errorlevel% neq 0 (
   exit /b %errorlevel%
 )
 
-call deleteHTML.bat
+rem call deleteHTML.bat
 if %errorlevel% neq 0 (
   echo 不要なHTML削除に失敗しました。
   exit /b %errorlevel%
