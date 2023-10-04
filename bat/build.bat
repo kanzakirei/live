@@ -1,32 +1,31 @@
 @echo off
 chcp 65001 > nul
-cd %~dp0 > nul
 
-call createPostHTML.bat
+call bat/createPostHTML.bat
 if %errorlevel% neq 0 (
   echo Failure: createPostHTML.bat
   exit /b %errorlevel%
 )
 
-call includeHTML.bat
+call bat/includeHTML.bat
 if %errorlevel% neq 0 (
   echo Failure: includeHTML.bat
   exit /b %errorlevel%
 )
 
-rem call deleteHTML.bat
+call bat/deleteHTML.bat
 if %errorlevel% neq 0 (
   echo Failure: deleteHTML.bat
   exit /b %errorlevel%
 )
 
-call deletePostHTML.bat
+call bat/deletePostHTML.bat
 if %errorlevel% neq 0 (
   echo Failure: deletePostHTML.bat
   exit /b %errorlevel%
 )
 
-rem call convertAVIF.bat
+rem call bat/convertAVIF.bat
 if %errorlevel% neq 0 (
   echo Failure: convertAVIF.bat
   exit /b %errorlevel%

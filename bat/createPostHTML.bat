@@ -1,8 +1,7 @@
 @echo off
 chcp 65001 > nul
-cd %~dp0 > nul
 
-pushd "../html/posts" > nul
+pushd "html/posts" > nul
 for %%f in (*.txt) do (
   call :Path %%f
 )
@@ -13,8 +12,7 @@ popd > nul
 exit /b 0
 
 :Path
-set html=%~n1.html
-call :MainFile %1 ../../posts/%html%
+call :MainFile %1 ../../posts/%~n1.html
 exit /b 0
 
 :MainFile
