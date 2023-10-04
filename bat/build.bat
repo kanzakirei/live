@@ -4,32 +4,31 @@ cd %~dp0 > nul
 
 call createPostHTML.bat
 if %errorlevel% neq 0 (
-  echo PostHTMLの作成に失敗しました。
+  echo Failure: createPostHTML.bat
   exit /b %errorlevel%
 )
 
 call includeHTML.bat
 if %errorlevel% neq 0 (
-  echo インクルードに失敗しました。
+  echo Failure: includeHTML.bat
   exit /b %errorlevel%
 )
 
 rem call deleteHTML.bat
 if %errorlevel% neq 0 (
-  echo 不要なHTML削除に失敗しました。
+  echo Failure: deleteHTML.bat
   exit /b %errorlevel%
 )
 
 call deletePostHTML.bat
 if %errorlevel% neq 0 (
-  echo 不要なPostHTML削除に失敗しました。
+  echo Failure: deletePostHTML.bat
   exit /b %errorlevel%
 )
 
 rem call convertAVIF.bat
 if %errorlevel% neq 0 (
-  echo AVIF変換に失敗しました。
-  pause
+  echo Failure: convertAVIF.bat
   exit /b %errorlevel%
 )
 exit /b %errorlevel%
