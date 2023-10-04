@@ -1,11 +1,9 @@
 @echo off
 chcp 65001 > nul
 
-pushd "../img" > nul
-for /r %%f in (*.png,*.jpg) do (
+for /r %%f in (../img/*.png,../img/*.jpg) do (
   if not exist %%~dpnf.avif (
-    call "../bat/cavif.exe" %%f
+    call cavif.exe %%f
   )
 )
-popd > nul
 exit /b 0
