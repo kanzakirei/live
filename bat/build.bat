@@ -32,4 +32,4 @@ if %errorlevel% neq 0 (
   pause
   exit /b %errorlevel%
 )
-exit /b 0
+exit /b %errorlevel%
