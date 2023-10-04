@@ -1,5 +1,6 @@
 @echo off
 chcp 65001 > nul
+cd %~dp0 > nul
 
 pushd "../html" > nul
 for %%f in (*.html) do (
