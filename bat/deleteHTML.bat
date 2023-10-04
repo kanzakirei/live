@@ -1,7 +1,6 @@
 @echo off
 chcp 65001 > nul
 
-popd > nul
 pushd "../" > nul
 for %%f in (*.html) do (
   if not exist ../html/%%f (
