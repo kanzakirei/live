@@ -16,6 +16,6 @@ exit /b 0
 
 :DeleteHTML
 if not exist %~dpn1.txt (
-  rem del %~nx1
+  del %~nx1
 )
 exit /b 0
