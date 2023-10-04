@@ -4,7 +4,7 @@ cd %~dp0 > nul
 
 call createPostHTML.bat
 if %errorlevel% neq 0 (
-  echo Post作成に失敗しました。
+  echo PostHTMLの作成に失敗しました。
   exit /b %errorlevel%
 )
 
@@ -14,9 +14,15 @@ if %errorlevel% neq 0 (
   exit /b %errorlevel%
 )
 
+call deleteHTML.bat
+if %errorlevel% neq 0 (
+  echo 不要なHTML削除に失敗しました。
+  exit /b %errorlevel%
+)
+
 call deletePostHTML.bat
 if %errorlevel% neq 0 (
-  echo Post削除に失敗しました。
+  echo 不要なPostHTML削除に失敗しました。
   exit /b %errorlevel%
 )
 
