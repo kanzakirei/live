@@ -16,7 +16,7 @@ popd > nul
 exit /b 0
 
 :Delete
-if not exist "%~dpn1.txt" (
+if not exist "%~pn1.txt" (
   del %~nx1
 )
 exit /b 0
