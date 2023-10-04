@@ -3,7 +3,7 @@ chcp 65001 > nul
 
 pushd "../" > nul
 for %%f in (*.html) do (
-  if not exist ../html/%%f (
+  if not exist html/%%f (
     del %%f
   )
 )
