@@ -1,5 +1,6 @@
 @echo off
 chcp 65001 > nul
+cd %~dp0
 
 call createPostHTML.bat
 if %errorlevel% neq 0 (
