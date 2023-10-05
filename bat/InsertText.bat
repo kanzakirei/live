@@ -1,4 +1,4 @@
-@echo off
+
 set InportFile=%1
 set ExportFile=%1
 set InsertFile=%2
