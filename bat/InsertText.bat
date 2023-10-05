@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 set InportFile=%1
 set ExportFile=%1
 set InsertFile=%2
@@ -21,6 +21,6 @@ type nul>temp.txt
 for /f "tokens=1* delims=: eol=" %%x in ('findstr /n "^" %InportFile%') do (
   (echo.%%y) >> temp.txt
   (echo %%y) | find %KeyString% > nul
-  if not ERRORLEVEL 1 type %InsertFile%>>%ExportFile%
+  if not ERRORLEVEL 1 type %InsertFile%>>temp.txt
 )
 exit /b 0
