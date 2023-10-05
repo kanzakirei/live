@@ -3,6 +3,7 @@ set InportFile=%1
 set ExportFile=%1
 set InsertFile=%2
 set KeyString=%3
+set TempFile=temp.txt
 
 if not exist %InsertFile% (
   echo Not exist %InsertFile%
@@ -17,13 +18,15 @@ if not exist %ExportFile% (
   exit /b 1
 )
 
-type nul>temp.txt
+type nul>%TempFile%
 for /f "tokens=1* delims=: eol=" %%x in ('findstr /n "^" %InportFile%') do (
-  (echo.%%y) >> temp.txt
+  (echo.%%y) >> %TempFile%
   (echo "%%y") | find "%KeyString%" > nul
   if not ERRORLEVEL 1 (
-    type %InsertFile%>>temp.txt
-    (echo.) >> temp.txt
+    type %InsertFile%>>%TempFile%
+    (echo.) >> %TempFile%
   )
 )
+type %TempFile%>%ExportFile%
+del %TempFile%
 exit /b 0
