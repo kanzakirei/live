@@ -1,21 +1,19 @@
-
 set InportFile=%1
-set ExportFile=%1
 set InsertFile=%2
 set KeyString=%3
+set ExportFile=%4
 set TempFile=temp.txt
 
-if not exist %InsertFile% (
-  echo Not exist %InsertFile%
-  exit /b 1
-)
 if not exist %InportFile% (
   echo Not exist %InportFile%
   exit /b 1
 )
-if not exist %ExportFile% (
-  echo Not exist %ExportFile%
+if not exist %InsertFile% (
+  echo Not exist %InsertFile%
   exit /b 1
+)
+if not exist %ExportFile% (
+  set ExportFile=%InportFile%
 )
 
 type nul>%TempFile%
