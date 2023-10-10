@@ -4,7 +4,6 @@ set InportFile=%1
 set InsertFile=%2
 set KeyString=%3
 set ExportFile=%4
-set Result=0
 set TempFile=temp
 
 if not exist "%InportFile%" (
@@ -15,8 +14,7 @@ if not exist "%InsertFile%" (
   echo Insert file ^(%%2^) not exist.
   exit /b 1
 )
-if %KeyString%=="" set Result=1
-if %Result%==1 (
+if %KeyString%=="" (
   echo Search key ^(%%3^) is empty.
   exit /b 1
 )
