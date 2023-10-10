@@ -1,11 +1,16 @@
 @echo off
 chcp 65001 > nul
+set Type=%1
+shift
+goto %Type%
+exit /b 1
+
+:Insert
 set InportFile=%1
 set InsertFile=%2
 set KeyString=%3
 set ExportFile=%4
 set TempFile=temp
-
 if not exist "%InportFile%" (
   echo Inport file ^(%%1^) not exist.
   exit /b 1
@@ -23,7 +28,6 @@ if "%ExportFile%"=="" (
   echo Insert into import file.
   set ExportFile=%InportFile%
 )
-
 type nul>%TempFile%
 for /f "tokens=1* delims=: eol=" %%x in ('findstr /n "^" %InportFile%') do (
   (echo.%%y) >> %TempFile%
