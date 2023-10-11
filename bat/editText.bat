@@ -25,7 +25,7 @@ if not exist %InsertFile% (
 )
 if %ExportFile%=="" (
   echo Export file ^(%%4^) not exist.
-  echo Insert into import file.
+  echo Export into import file.
   set ExportFile=%InportFile%
 )
 type nul>%TempFile%
@@ -52,16 +52,16 @@ if not exist %InportFile% (
   exit /b 1
 )
 if "%BeforeString%"=="" (
-  echo Search key ^(%%2^) is empty.
+  echo Before string ^(%%2^) is empty.
   exit /b 1
 )
 if "%AfterString%"=="" (
-  echo Search key ^(%%3^) is empty.
+  echo After string ^(%%3^) is empty.
   exit /b 1
 )
 if %ExportFile%=="" (
   echo Export file ^(%%4^) not exist.
-  echo Insert into import file.
+  echo Export into import file.
   set ExportFile=%InportFile%
 )
 type nul>%TempFile%
