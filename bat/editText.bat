@@ -36,7 +36,7 @@ if %ExportFile%=="" (
       (echo.)
     )
   )
-) >> %ExportFile%
+) > %ExportFile%
 exit /b 0
 
 :Replace
@@ -69,6 +69,6 @@ if %ExportFile%=="" (
     (echo.!line!)
   )
   endlocal
-) >> %ExportFile%
+) > %ExportFile%
 exit /b 0
 
