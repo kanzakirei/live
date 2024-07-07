@@ -15,9 +15,9 @@ popd > nul
 exit /b 0
 
 :MainFile
-if "%~t2" GTR "%~t1" (
-  exit /b 0
-)
+rem if "%~t2" GTR "%~t1" (
+rem   exit /b 0
+rem )
 set InDir=%1
 set OutDir=%2
 type nul>head.tmp
