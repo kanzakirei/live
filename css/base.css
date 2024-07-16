@@ -132,14 +132,14 @@ div.left {
   animation: slideshowImageAnime 20s linear 0s infinite normal forwards;
 }
 
-.slideshowImage img:nth-child(2) {
+.slideshowImage img:has(> :nth-child(2):last-child) {
   animation-duration: 20s;
 }
 
-.slideshowImage img:nth-child(3) {
+.slideshowImage img:has(> :nth-child(3):last-child) {
   animation-duration: 30s;
 }
-.slideshowImage img:nth-child(4) {
+.slideshowImage img:has(> :nth-child(4):last-child) {
   animation-duration: 40s;
 }
 
