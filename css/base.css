@@ -74,6 +74,10 @@ div.left {
   text-align: left;
 }
 
+.blockScrolling {
+  overflow: hidden; 
+}
+
 .content {
   position: relative;
   padding: 10px 0;
