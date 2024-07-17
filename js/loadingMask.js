@@ -1,6 +1,6 @@
-// document.body.classList.add("blockScrolling");
+document.body.style.overflow = "hidden";
 
 window.onload = function() {
   document.getElementById("loading").classList.toggle("fadeOut");
-  document.body.classList.remove("blockScrolling");
+  document.body.style.overflow = "visible";
 }
