@@ -1,4 +1,4 @@
-document.body.classList.add("blockScrolling");
+// document.body.classList.add("blockScrolling");
 
 window.onload = function() {
   document.getElementById("loading").classList.toggle("fadeOut");
