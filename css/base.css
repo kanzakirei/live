@@ -1,3 +1,4 @@
+/* 共通 */
 * {
   margin: 0;
   padding: 0;
@@ -43,21 +44,11 @@ footer p {
   font-size: 12px;
 }
 
-footer .content img {
-  max-width: 400px;
-  width: 100%;
-  aspect-ratio: 5/2;
-}
-
-footer .content a img {
-  width: 20px;
-  aspect-ratio: 1;
-}
-
 p {
   padding: 5px;
 }
 
+/* ページ汎用 */
 h1.center,
 h2.center,
 h3.center,
@@ -74,37 +65,11 @@ div.left {
   text-align: left;
 }
 
-.blockScrolling {
-  overflow: hidden; 
-}
-
-.content {
-  position: relative;
-  padding: 10px 0;
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1000px;
-  z-index: 1;
-}
-
-.profile {
-  margin: 0 auto;
-  width: 90%;
-}
-
 .line {
   width: 100%;
   border-bottom: 2px solid #292929;
   padding-top: 10px;
   margin-bottom: 10px;
-}
-
-.fadeIn {
-  animation: fadeInAnime .3s ease 0s 1 normal forwards;
-}
-
-.fadeOut {
-  animation: fadeOutAnime .3s ease 0s 1 normal forwards;
 }
 
 #snowParticles {
@@ -119,6 +84,43 @@ div.left {
   padding: 0px 15px 30px;
 }
 
+@font-face {
+  font-family: 'MOBOFont';
+  src: url("../font/MOBO-SemiBold.otf");
+}
+
+.horizontal li {
+  display: inline-block;
+  padding: 0px 15px 30px;
+}
+
+/* コンテンツ */
+.content {
+  position: relative;
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1000px;
+  z-index: 1;
+}
+
+footer .content img {
+  max-width: 400px;
+  width: 100%;
+  aspect-ratio: 5/2;
+}
+
+footer .content a img {
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.profile {
+  margin: 0 auto;
+  width: 90%;
+}
+
+/* スライドショー */
 .slideshowImage {
   overflow: hidden;
   position: relative;
@@ -148,6 +150,34 @@ div.left {
   animation-delay: 30s;
 }
 
+@keyframes slideshowImageAnime {
+  0% {
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1.2);
+  }
+
+  28% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0;
+    z-index: 2;
+    transform: scale(1);
+  }
+
+  31% {
+    z-index: 0;
+  }
+
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+/* リンクボタン */
 .linkButton {
   position: relative;
   display: inline-block;
@@ -183,6 +213,7 @@ div.left {
   right: 7px;
 }
 
+/* パララックス */
 .parallax {
   position: sticky;
   display: flex;
@@ -229,6 +260,7 @@ div.left {
   background-color: gray;
 }
 
+/* 記事 */
 .article {
   margin: 0px auto 0px;
   box-sizing: border-box;
@@ -288,6 +320,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* ラベル */
 .label {
   margin: 0px 12px;
   padding: 3px 6px;
@@ -324,7 +357,70 @@ summary::-webkit-details-marker {
   background: blue none repeat scroll 0% 0%;
 }
 
+/* ロード画面 */
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: #333;
+  text-align: center;
+  color: white;
+  visibility: visible;
+  opacity: 1;
+}
+
+#loadingLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#loadingLogo img {
+  width: 80%;
+  height: auto;
+}
+
+.loadingFadeUp {
+  animation-name: loadingFadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes loadingFadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loadingFadeOut {
+  animation: loadingFadeOutAnime .3s ease 0s 1 normal forwards;
+}
+
+@keyframes loadingFadeOutAnime {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* 画面サイズ別設定 */
 @media screen and (min-width: 955px) {
+
+  /* ナビゲーション */
   #navigation {
     position: fixed;
     right: 0;
@@ -362,6 +458,7 @@ summary::-webkit-details-marker {
     visibility: hidden;
   }
 
+  /* プロフィール */
   .profilePanel {
     position: relative;
     display: inline-block;
@@ -376,7 +473,10 @@ summary::-webkit-details-marker {
   }
 }
 
+/* 画面サイズ別設定 */
 @media screen and (max-width: 954px) {
+
+  /* ナビゲーション */
   #navigation {
     position: fixed;
     right: 0;
@@ -460,6 +560,7 @@ summary::-webkit-details-marker {
     width: 40%;
   }
 
+  /* プロフィール */
   .profile {
     max-width: 600px;
   }
@@ -470,75 +571,5 @@ summary::-webkit-details-marker {
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
-}
-
-@font-face {
-  font-family: 'MOBOFont';
-  src: url("../font/MOBO-SemiBold.otf");
-}
-
-@keyframes fadeInAnime {
-  from {
-    visibility: visible;
-    opacity: 0;
-  }
-
-  to {
-    visibility: visible;
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOutAnime {
-  from {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-
-@keyframes slideshowImageAnime {
-  0% {
-    opacity: 1;
-    z-index: 1;
-    transform: scale(1.2);
-  }
-
-  28% {
-    opacity: 1;
-  }
-
-  30% {
-    opacity: 0;
-    z-index: 2;
-    transform: scale(1);
-  }
-
-  31% {
-    opacity: 1;
-    z-index: 0;
-  }
-}
-
-.flyAnimation {
-  animation: flyAnime 5s ease-in-out 0s infinite normal forwards;
-}
-
-@keyframes flyAnime {
-  0% {
-    transform: translateY(-10px)
-  }
-
-  50% {
-    transform: translateY(10px)
-  }
-
-  100% {
-    transform: translateY(-10px)
   }
 }

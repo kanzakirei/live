@@ -1,6 +1,6 @@
 document.documentElement.style.overflow = "hidden";
 
-window.onload = function() {
-  document.getElementById("loading").classList.toggle("fadeOut");
+window.onload = function () {
+  document.getElementById("loading").classList.toggle("loadingFadeOut");
   document.documentElement.style.overflow = "visible";
 }
