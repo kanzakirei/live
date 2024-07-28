@@ -120,6 +120,56 @@ footer .content a img {
   width: 90%;
 }
 
+.fadeIn {
+  animation: fadeInAnime .3s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInAnime {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.fadeOut {
+  animation: fadeOutAnime .3s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeOutAnime {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* スライドショー */
 .slideshowImage {
   overflow: hidden;
@@ -380,41 +430,6 @@ summary::-webkit-details-marker {
 #loadingLogo img {
   width: 80%;
   height: auto;
-}
-
-.loadingFadeUp {
-  animation-name: loadingFadeUpAnime;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-
-@keyframes loadingFadeUpAnime {
-  from {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.loadingFadeOut {
-  animation: loadingFadeOutAnime .3s ease 0s 1 normal forwards;
-}
-
-@keyframes loadingFadeOutAnime {
-  from {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  to {
-    visibility: hidden;
-    opacity: 0;
-  }
 }
 
 /* 画面サイズ別設定 */
