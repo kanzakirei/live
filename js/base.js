@@ -10,6 +10,12 @@ function onClickedNavigationButton(element) {
   }
 }
 
+function appendScript(URL) {
+  var el = document.createElement('script');
+  el.src = URL;
+  document.body.appendChild(el);
+}
+
 particlesJS("snowParticles", {
   "particles": {
     "number": {

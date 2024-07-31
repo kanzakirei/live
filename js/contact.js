@@ -1,4 +1,6 @@
-﻿function OnClickedContactButton() {
+﻿appendScript("networkManager.js");
+
+function onClickedContactButton() {
   const nameForm = document.getElementById("nameForm");
   const messageForm = document.getElementById("messageForm");
 
