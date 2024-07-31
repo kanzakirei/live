@@ -9,7 +9,7 @@ function request(_endPoint, _json, _onSuccessed = null, _onErrored = null) {
   });
   fetch(request)
     .then(response => {
-      if (_onSuccessed != null) _onSuccessed(response.json());
+      if (_onSuccessed != null) _onSuccessed(response);
     })
     .catch(error => {
       if (_onErrored != null) _onErrored(error);
