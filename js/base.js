@@ -12,7 +12,7 @@ function onClickedNavigationButton(element) {
 
 function appendScript(URL) {
   var el = document.createElement('script');
-  el.src = URL;
+  el.src = "js/" + URL;
   document.body.appendChild(el);
 }
 
