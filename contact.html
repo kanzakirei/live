@@ -14,7 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <title>KANZAKIREI OFFICIAL CONTACT</title>
   <link type="text/css" rel="stylesheet" href="css/base.css">
-  <script src="js/checkInquiry.js"></script>
+  <script src="js/contact.js"></script>
 </head>
 <body>
   <header>
@@ -33,22 +33,18 @@
     <div class="content center">
       <h2>お問い合わせ</h2>
       <div id="formWrapper">
-        <form
-          action="https://docs.google.com/forms/d/e/1FAIpQLSfSBHWoqOW9FqLXs6chNLuznWSbvjsPOJIO8MHVEXNSwtPvig/formResponse"
-          method="post" name="myForm" target="dummyIframe">
-          <p class="center">こちらでお問い合わせ内容を送ることができます。<br>以下の項目を入力して送信ボタンを押してください。</p>
-          <div>
-            <label>お名前<span class="label label_red">必須</span><br></label>
-            <input name="entry.189874138" id="characterNameForm" placeholder="お名前をご入力ください。" required="required"
-              style="width:50%;" type="text">
-          </div>
-          <div>
-            <label>お問い合わせ内容<span class="label label_red">必須</span><br></label>
-            <textarea name="entry.875781179" id="inquiryForm" placeholder="お問い合わせ内容をご入力ください。" required="required"
-              style="height:64px; width:50%;"></textarea>
-          </div>
-          <input value="送信" onclick="checkSubmit()" type="submit">
-        </form>
+        <p class="center">こちらでお問い合わせ内容を送ることができます。<br>以下の項目を入力して送信ボタンを押してください。</p>
+        <div>
+          <label>お名前<span class="label label_red">必須</span><br></label>
+          <input name="nameForm" id="nameForm" placeholder="お名前をご入力ください。" required="required" style="width:50%;"
+            type="text">
+        </div>
+        <div>
+          <label>お問い合わせ内容<span class="label label_red">必須</span><br></label>
+          <textarea name="messageForm" id="messageForm" placeholder="お問い合わせ内容をご入力ください。" required="required"
+            style="height:64px; width:50%;"></textarea>
+        </div>
+        <input value="送信" onclick="OnClickedContactButton()" type="button">
         <iframe name="dummyIframe" style="display:none;"></iframe>
       </div>
       <div id="thxMessage" style="display:none;">

@@ -86,18 +86,3 @@ particlesJS("snowParticles", {
   },
   "retina_detect": true
 });
-
-function onClickedCampaignButton() {
-  let answerText = document.getElementById('answerText');
-  let comment = document.getElementById('comment');
-  if (answerText.value == "4周年" || answerText.value == "４周年") {
-    location = 'WajkdDjkjIjkLJdHknKslj.html';
-  } else {
-    comment.innerText = "キーワードが間違っているよ！もう一度確認してみてね！";
-  }
-}
-
-let campaignButton = document.getElementById('campaignButton');
-if (campaignButton) {
-  campaignButton.addEventListener('click', onClickedCampaignButton);
-}
