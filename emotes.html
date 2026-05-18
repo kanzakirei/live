@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Twitch Emote Groups</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #0e0e10;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    .group {
+      margin-bottom: 56px;
+    }
+
+    .group-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      font-size: 24px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+
+      border-bottom: 2px solid #9147ff;
+    }
+
+    .count {
+      font-size: 13px;
+      background: #9147ff;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: #18181b;
+      border: 1px solid #2f2f35;
+      border-radius: 14px;
+      padding: 18px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: #232328;
+      border-color: #9147ff;
+    }
+
+    .card img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      margin-bottom: 14px;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+      word-break: break-word;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #32323a;
+      color: #ddd;
+    }
+
+    .tier-1000 {
+      background: #3b82f6;
+    }
+
+    .tier-2000 {
+      background: #8b5cf6;
+    }
+
+    .tier-3000 {
+      background: #eab308;
+      color: black;
+    }
+
+    .animated {
+      background: #22c55e;
+      color: black;
+    }
+
+    .follower {
+      background: #ec4899;
+    }
+
+    .bits {
+      background: #06b6d4;
+      color: black;
+    }
+
+    .loading {
+      color: #aaa;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Twitch Emote Groups</h1>
+
+<div id="loading" class="loading">
+  Loading emotes...
+</div>
+
+<div id="app"></div>
+
+<script>
+
+const CLIENT_ID = "nwptro4hfd1dp0o675h6qd2d439km3";
+const ACCESS_TOKEN = "3z80t7tetisbfc9j6pq3p61opwvt96";
+const BROADCASTER_ID = "163470020";
+
+const app = document.getElementById("app");
+const loading = document.getElementById("loading");
+
+async function loadEmotes() {
+
+  try {
+
+    const response = await fetch(
+      `https://api.twitch.tv/helix/chat/emotes?broadcaster_id=${BROADCASTER_ID}`,
+      {
+        headers: {
+          "Client-Id": CLIENT_ID,
+          "Authorization": `Bearer ${ACCESS_TOKEN}`
+        }
+      }
+    );
+
+    const json = await response.json();
+
+    console.log(json);
+
+    loading.remove();
+
+    render(json.data);
+
+  } catch (err) {
+
+    console.error(err);
+
+    loading.innerHTML = "Failed to load emotes.";
+  }
+}
+
+function render(emotes) {
+
+  const grouped = {
+    follower: [],
+    subscriptions: {},
+    bitstier: []
+  };
+
+  emotes.forEach(emote => {
+
+    // follower
+    if (emote.emote_type === "follower") {
+
+      grouped.follower.push(emote);
+    }
+
+    // bits
+    else if (emote.emote_type === "bitstier") {
+
+      grouped.bitstier.push(emote);
+    }
+
+    // subscriptions
+    else if (emote.emote_type === "subscriptions") {
+
+      const tier = emote.tier || "unknown";
+
+      if (!grouped.subscriptions[tier]) {
+        grouped.subscriptions[tier] = [];
+      }
+
+      grouped.subscriptions[tier].push(emote);
+    }
+  });
+
+  // follower
+  createSection(
+    "Follower Emotes",
+    grouped.follower
+  );
+
+  // subscriptions
+  Object.keys(grouped.subscriptions)
+    .sort()
+    .forEach(tier => {
+
+      createSection(
+        `Subscription Tier ${tier}`,
+        grouped.subscriptions[tier]
+      );
+    });
+
+  // bits
+  createSection(
+    "Bits Emotes",
+    grouped.bitstier
+  );
+}
+
+function createCard(emote) {
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const img = document.createElement("img");
+
+  // animated があれば animated URL使用
+  if (emote.format.includes("animated")) {
+
+    img.src =
+      `https://static-cdn.jtvnw.net/emoticons/v2/${emote.id}/animated/dark/3.0`;
+
+  } else {
+
+    img.src = emote.images.url_4x;
+  }
+
+  img.alt = emote.name;
+
+  const name = document.createElement("div");
+  name.className = "name";
+  name.textContent = emote.name;
+
+  const meta = document.createElement("div");
+  meta.className = "meta";
+
+  // tier badge
+  if (emote.tier) {
+
+    const tier = document.createElement("div");
+
+    tier.className = `badge tier-${emote.tier}`;
+
+    tier.textContent = `Tier ${emote.tier}`;
+
+    meta.appendChild(tier);
+  }
+
+  // animated badge
+  if (emote.format.includes("animated")) {
+
+    const animated = document.createElement("div");
+
+    animated.className = "badge animated";
+
+    animated.textContent = "Animated";
+
+    meta.appendChild(animated);
+  }
+
+  // type badge
+  const type = document.createElement("div");
+
+  if (emote.emote_type === "follower") {
+
+    type.className = "badge follower";
+    type.textContent = "Follower";
+  }
+
+  else if (emote.emote_type === "bitstier") {
+
+    type.className = "badge bits";
+    type.textContent = "Bits";
+  }
+
+  if (type.textContent) {
+    meta.appendChild(type);
+  }
+
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(meta);
+
+  return card;
+}
+
+function createSection(title, list) {
+
+  if (!list.length) return;
+
+  const section = document.createElement("section");
+  section.className = "group";
+
+  const heading = document.createElement("div");
+  heading.className = "group-title";
+
+  heading.innerHTML = `
+    ${title}
+    <span class="count">${list.length}</span>
+  `;
+
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  list.forEach(emote => {
+    grid.appendChild(createCard(emote));
+  });
+
+  section.appendChild(heading);
+  section.appendChild(grid);
+
+  app.appendChild(section);
+}
+
+loadEmotes();
+
+</script>
+
+</body>
+</html>
